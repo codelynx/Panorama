@@ -44,6 +44,10 @@ class MyPanorama: Panorama {
 		#endif
 	}
 
+	override func didMove(to panoramaView: PanoramaView?) {
+		super.didMove(to: panoramaView)
+	}
+
 	//	iOS
 
 	#if os(iOS)

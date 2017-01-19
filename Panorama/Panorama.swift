@@ -50,8 +50,6 @@ class Panorama {
 	}
 
 	func draw(in context: CGContext) {
-		XColor.red.set()
-		XBezierPath(ovalIn: self.bounds).fill()
 	}
 	
 	
