@@ -124,6 +124,18 @@ If you like to use `GestureRecognizer`, stay tuned.
 
 `PanoramaView` is a subclass of UIView/NSView.  It constructs necessary subcomponents like UI/NSScrollView and others by code.  So, you only needs to place `PanoramaView` directory on your storyboard, and your view controller or other part of your code need to set your subclass of Panorama to this PanoramaView.
 
+## Behind the PanoramaView
+
+In fact, there are some supporting views behind the `PanoramaView`.   `PanoramaContentView` is the one who sits within the scroll view and represent `Panorama`'s content and coordinate system, so `PanoramaContentView`'s width and height actually represents `Panorama`'s content size.   Then when you zoom or scroll your screen, `PanoramaContentView` is the one actually scrolled or zoomed.  But strange to say, both `PanoramaContentView` and `UI/NSScrollView` are transparent and cannot be seen on your screen directory.
+
+On the other hand, the view actually to be displayed is `PanoramaBackView`.  `PanoramaBackView` just sits behind `UI/NSScrollView` it does not zoomed or scrolled.  But when it came a moment to display `Panorama`, `PanoramaBackView` is the one to organize drawing process.  `PanoramaBackView` usues `PanoramaContentView`'s coordinate system to setup graphic context, and call `Panorama`'s `draw()` method.  So `Panorama` doesn't have worry about any drawing transformation, just draw things on your own coordinate systems.  
+
+When you touch or click on your screen, `PanoramaContentView` is the one to receive those events, and forwards them to `Panorama`.  Since, `PanoramaContentView`'s local coordinate represents `Panorama` coordinate, touch location and mouse location should not require complex math.  However, we provide `location(in: Panorama)` method for both `UITouch` and `NSEvent` as an extension, so you may use those methods to find location in `Panorama`.
+
+All supported views will be constructed by `PanoramaView`, and you don't have to worry about them while writing code Panorama.  But when you needs to add some features on `PanoramaView` or supporting more events, it is still good to know.
+
+<img width="640" src="https://qiita-image-store.s3.amazonaws.com/0/65634/4c1060a7-7c2d-0019-1ee4-7ad9e87dbebe.png"/>
+
 
 ## Sample App
 
