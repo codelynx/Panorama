@@ -13,9 +13,9 @@ import Cocoa
 #endif
 
 
-class Panorama {
+class Panorama: Viewlet {
 
-	var bounds: CGRect {
+	override var frame: CGRect {
 		didSet {
 			self.panoramaView?.setNeedsLayout()
 		}
@@ -41,87 +41,95 @@ class Panorama {
 		}
 	}
 
-	init(bounds: CGRect) {
-		self.bounds = bounds
+	override init(frame: CGRect) {
+		super.init(frame: frame)
 	}
 
 	func didMove(to panoramaView: PanoramaView?) {
 		self.panoramaView = panoramaView
 	}
 
-	func draw(in context: CGContext) {
-	}
-	
-	
-	func setNeedsDisplay() {
+	override func setNeedsDisplay() {
 		self.panoramaView?.backView.setNeedsDisplay()
 	}
 
+	override var panorama: Panorama? {
+		return self
+	}
+
+	override var transformToPanorama: CGAffineTransform? {
+		return CGAffineTransform.identity
+	}
+
+	// MARK: -
+
 	#if os(iOS)
-	func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+	
+	var activeTouchViewlet = [UITouch: Viewlet]()
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		for touch in touches {
+			if let point = touch.location(in: self), let viewlet = self.findViewlet(point: point) {
+				if viewlet.enabled {
+					activeTouchViewlet[touch] = viewlet
+					viewlet.touchesBegan(touches, with: event)
+				}
+			}
+		}
 	}
 
-	func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+		for touch in touches {
+			if let viewlet = self.activeTouchViewlet[touch] {
+				// why not checking enabled? -- once start handling began then let them finish
+				viewlet.touchesMoved(touches, with: event)
+			}
+		}
 	}
 	
-	func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+		for touch in touches {
+			if let viewlet = self.activeTouchViewlet[touch] {
+				viewlet.touchesEnded(touches, with: event)
+			}
+			self.activeTouchViewlet[touch] = nil
+		}
 	}
 	
-	func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+	override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+		for touch in touches {
+			if let viewlet = self.activeTouchViewlet[touch] {
+				viewlet.touchesCancelled(touches, with: event)
+			}
+			self.activeTouchViewlet[touch] = nil
+		}
 	}
 	#endif
 
 	#if os(macOS)
-	func touchesBegan(with event: NSEvent) {
+	var activeViewlet: Viewlet?
+
+	override func mouseDown(with event: NSEvent) {
+		if let point = event.location(in: self), let viewlet = self.findViewlet(point: point) {
+			if viewlet.enabled {
+				activeViewlet = viewlet
+				viewlet.mouseDown(with: event)
+			}
+		}
 	}
 
-	func touchesMoved(with event: NSEvent) {
+	override func mouseDragged(with event: NSEvent) {
+		// why not checking enabled? -- once start handling mouseDown then let them finish
+		activeViewlet?.mouseMoved(with: event)
 	}
-
-	func touchesEnded(with event: NSEvent) {
-	}
-
-	func touchesCancelled(with event: NSEvent) {
+	
+	override func mouseUp(with event: NSEvent) {
+		activeViewlet?.mouseUp(with: event)
+		activeViewlet = nil
 	}
 	#endif
 
-	#if os(macOS)
-	func mouseDown(with event: NSEvent) {
-	}
-
-	func mouseDragged(with event: NSEvent) {
-	}
-	
-	func mouseUp(with event: NSEvent) {
-	}
-
-	func mouseMoved(with event: NSEvent) {
-	}
-	
-	func rightMouseDown(with event: NSEvent) {
-	}
-	
-	func rightMouseDragged(with event: NSEvent) {
-	}
-	
-	func rightMouseUp(with event: NSEvent) {
-	}
-	
-	func otherMouseDown(with event: NSEvent) {
-	}
-	
-	func otherMouseDragged(with event: NSEvent) {
-	}
-	
-	func otherMouseUp(with event: NSEvent) {
-	}
-	
-	func mouseExited(with event: NSEvent) {
-	}
-	
-	func mouseEntered(with event: NSEvent) {
-	}
+	#if os(iOS)
 	#endif
-
 }
 

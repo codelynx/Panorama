@@ -76,7 +76,7 @@ class PanoramaBackView: XView {
 
 		context.saveGState()
 		context.concatenate(transform)
-		panorama.draw(in: context)
+		panorama.drawRecursively(in: context)
 		context.restoreGState()
 	}
 

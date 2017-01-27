@@ -13,6 +13,24 @@ import Cocoa
 #endif
 
 
+class MyViewlet: Viewlet {
+
+	var color: XColor
+	var name: String
+
+	init(frame: CGRect, color: XColor, name: String) {
+		self.color = color
+		self.name = name
+		super.init(frame: frame)
+	}
+
+	override func draw(in context: CGContext) {
+		context.setFillColor(self.color.cgColor)
+		context.fillEllipse(in: self.bounds)
+	}
+	
+}
+
 
 class MyPanorama: Panorama {
 
@@ -46,10 +64,19 @@ class MyPanorama: Panorama {
 
 	override func didMove(to panoramaView: PanoramaView?) {
 		super.didMove(to: panoramaView)
+		
+		let viewlet1 = MyViewlet(frame: CGRect(x: 0, y: 0, width: 1024, height: 1024), color: XColor.orange.withAlphaComponent(0.5), name: "1")
+		let viewlet2 = MyViewlet(frame: CGRect(x: 256, y: 256, width: 512, height: 512), color: XColor.blue.withAlphaComponent(0.5), name: "2")
+		viewlet1.addViewlet(viewlet2)
+
+		let viewlet3 = ButtonViewlet(frame: CGRect(x: 128, y: 128, width: 256, height: 256))
+		viewlet2.addViewlet(viewlet3)
+
+		self.addViewlet(viewlet1)
 	}
 
 	//	iOS
-
+/*
 	#if os(iOS)
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		for touch in touches {
@@ -88,9 +115,10 @@ class MyPanorama: Panorama {
 		}
 	}
 	#endif
-
+*/
 	//	macOS
 
+/*
 	#if os(macOS)
 	override func mouseDown(with event: NSEvent) {
 		if let location = event.location(in: self) {
@@ -116,4 +144,5 @@ class MyPanorama: Panorama {
 		self.setNeedsDisplay()
 	}
 	#endif
+*/
 }

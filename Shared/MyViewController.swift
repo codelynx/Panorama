@@ -20,7 +20,7 @@ class MyViewController: XViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.panoramaView.panorama = MyPanorama(bounds: CGRect(x: 0, y: 0, width: 1024, height: 1024))
+		self.panoramaView.panorama = MyPanorama(frame: CGRect(x: 0, y: 0, width: 1024, height: 1024))
 	}
 
 	#if os(iOS)

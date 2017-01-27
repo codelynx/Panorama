@@ -27,6 +27,8 @@ typealias XBezierPath = UIBezierPath
 typealias XScrollView = UIScrollView
 typealias XScrollViewDelegate = UIScrollViewDelegate
 typealias XViewController = UIViewController
+typealias XEvent = UIEvent
+typealias XFont = UIFont
 
 #elseif os(macOS)
 
@@ -37,6 +39,8 @@ typealias XColor = NSColor
 typealias XBezierPath = NSBezierPath
 typealias XScrollView = NSScrollView
 typealias XViewController = NSViewController
+typealias XEvent = NSEvent
+typealias XFont = NSFont
 
 protocol XScrollViewDelegate {}
 
@@ -118,3 +122,14 @@ extension NSImage {
 
 }
 #endif
+
+#if os(macOS)
+extension NSString {
+	/* Method 'sizeWithAttributes' with Objective-C selector 'sizeWithAttributes:' conflicts with method 'size(withAttributes:)' with the same Objective-C selector
+	func size(attributes: [String : Any]? = nil) -> CGSize {
+		return self.size(withAttributes: attributes)
+	}
+	*/
+}
+#endif
+
