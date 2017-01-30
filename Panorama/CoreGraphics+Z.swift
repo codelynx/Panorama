@@ -94,7 +94,12 @@ extension CGRect {
 		return CGRect(x: minX + xmargin, y: minY + ymargin, width: width, height: height)
 	}
 
-	func aspectFitSize(_ size: CGSize) -> CGSize {
+
+}
+
+extension CGSize {
+
+	func aspectFit(_ size: CGSize) -> CGSize {
 		let widthRatio = self.width / size.width
 		let heightRatio = self.height / size.height
 		let ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio
@@ -102,8 +107,12 @@ extension CGRect {
 		let height = size.height * ratio
 		return CGSize(width: width, height: height)
 	}
-
+	
+	static func - (lhs: CGSize, rhs: CGSize) -> CGSize {
+		return CGSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height)
+	}
 }
+
 
 extension CGAffineTransform {
 
