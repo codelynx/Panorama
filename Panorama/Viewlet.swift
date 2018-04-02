@@ -55,7 +55,7 @@ class Viewlet {
 	}
 	var transform: CGAffineTransform
 
-	init(frame: CGRect) {
+	public init(frame: CGRect) {
 		_bounds = CGRect(origin: CGPoint.zero, size: frame.size)
 		transform = _bounds.transform(to: frame)
 	}
@@ -291,7 +291,7 @@ class LabelViewlet: Viewlet {
 	var text: String?
 	var horizontalAlignment: Viewlet.HorizontalAlignment = .center
 	var verticalAlignment: Viewlet.VerticalAlignment = .center
-	var _attributes: [String: Any] = [:]
+	var _attributes: [NSAttributedStringKey: Any] = [:]
 
 	var textAlignment: NSTextAlignment {
 		switch horizontalAlignment {
@@ -306,19 +306,15 @@ class LabelViewlet: Viewlet {
 	}
 
 	var paragraphStyle: NSParagraphStyle {
-		#if os(iOS)
 		let style = NSMutableParagraphStyle(NSParagraphStyle.default)
-		#elseif os(macOS)
-		let style = NSMutableParagraphStyle(NSParagraphStyle.default())
-		#endif
 		style.alignment = self.textAlignment
 		return style
 	}
 
-	var attribute: [String: Any] {
+	var attribute: [NSAttributedStringKey: Any] {
 		var attributes = _attributes // copy
-		attributes[NSParagraphStyleAttributeName] = self.paragraphStyle
-		attributes[NSFontAttributeName] = LabelViewlet.defaultFont
+		attributes[NSAttributedStringKey.paragraphStyle] = self.paragraphStyle
+		attributes[NSAttributedStringKey.font] = LabelViewlet.defaultFont
 		return attributes
 	}
 

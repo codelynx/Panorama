@@ -35,7 +35,6 @@
 		CC28A4511E2FACAF004E69FC /* PanoramaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */; };
 		CC28A4521E2FACAF004E69FC /* PanoramaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */; };
 		CC28A4541E2FB7EF004E69FC /* UIKit+P.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */; };
-		CC28A4581E2FB972004E69FC /* AppKit+P.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4561E2FB972004E69FC /* AppKit+P.swift */; };
 		CC2B5BA11E3D0CAC008062DA /* ViewletStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */; };
 		CC2B5BA21E3D0CAC008062DA /* ViewletStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */; };
 		CC2B5BA41E3D10AA008062DA /* Sequence+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA31E3D10AA008062DA /* Sequence+Z.swift */; };
@@ -44,6 +43,9 @@
 		CC2B5BA81E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */; };
 		CCA1B5501E3F077800FBC83A /* ButtonViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */; };
 		CCA1B5511E3F077800FBC83A /* ButtonViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */; };
+		CCEA22252071BD0B006375DA /* NSEvent+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA22242071BD0B006375DA /* NSEvent+Z.swift */; };
+		CCEA22262071BD0B006375DA /* NSEvent+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA22242071BD0B006375DA /* NSEvent+Z.swift */; };
+		CCEA22272071BE73006375DA /* UIKit+P.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,11 +71,11 @@
 		CC28A44D1E2F65F4004E69FC /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanoramaContentView.swift; sourceTree = "<group>"; };
 		CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+P.swift"; sourceTree = "<group>"; };
-		CC28A4561E2FB972004E69FC /* AppKit+P.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKit+P.swift"; sourceTree = "<group>"; };
 		CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewletStyle.swift; sourceTree = "<group>"; };
 		CC2B5BA31E3D10AA008062DA /* Sequence+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+Z.swift"; sourceTree = "<group>"; };
 		CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableParagraphStyle+Z.swift"; sourceTree = "<group>"; };
 		CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewlet.swift; sourceTree = "<group>"; };
+		CCEA22242071BD0B006375DA /* NSEvent+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSEvent+Z.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +142,7 @@
 		CC28A4361E2F53A2004E69FC /* Panorama */ = {
 			isa = PBXGroup;
 			children = (
-				CC28A4561E2FB972004E69FC /* AppKit+P.swift */,
+				CCEA22242071BD0B006375DA /* NSEvent+Z.swift */,
 				CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */,
 				CC28A4461E2F593C004E69FC /* CoreGraphics+Z.swift */,
 				CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */,
@@ -221,6 +223,7 @@
 					CC28A4261E2F5383004E69FC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2P97EM4L4N;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -283,6 +286,7 @@
 				CC28A43E1E2F5426004E69FC /* PanoramaView.swift in Sources */,
 				CCA1B5501E3F077800FBC83A /* ButtonViewlet.swift in Sources */,
 				CC2B5BA41E3D10AA008062DA /* Sequence+Z.swift in Sources */,
+				CCEA22252071BD0B006375DA /* NSEvent+Z.swift in Sources */,
 				CC2B5BA11E3D0CAC008062DA /* ViewletStyle.swift in Sources */,
 				CC28A4411E2F5653004E69FC /* PanoramaBackView.swift in Sources */,
 				CC28A4471E2F593C004E69FC /* CoreGraphics+Z.swift in Sources */,
@@ -300,14 +304,15 @@
 				CC1145761E3B9AD500ADDA0A /* Viewlet.swift in Sources */,
 				CC2B5BA81E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift in Sources */,
 				CC28A44C1E2F64EE004E69FC /* MyPanorama.swift in Sources */,
-				CC28A4581E2FB972004E69FC /* AppKit+P.swift in Sources */,
 				CC28A43F1E2F5426004E69FC /* PanoramaView.swift in Sources */,
 				CC28A4521E2FACAF004E69FC /* PanoramaContentView.swift in Sources */,
 				CC28A4421E2F5653004E69FC /* PanoramaBackView.swift in Sources */,
 				CCA1B5511E3F077800FBC83A /* ButtonViewlet.swift in Sources */,
 				CC2B5BA51E3D10AA008062DA /* Sequence+Z.swift in Sources */,
+				CCEA22262071BD0B006375DA /* NSEvent+Z.swift in Sources */,
 				CC2B5BA21E3D0CAC008062DA /* ViewletStyle.swift in Sources */,
 				CC28A4481E2F593C004E69FC /* CoreGraphics+Z.swift in Sources */,
+				CCEA22272071BE73006375DA /* UIKit+P.swift in Sources */,
 				CC28A44F1E2F65F4004E69FC /* MyViewController.swift in Sources */,
 				CC28A4391E2F53D7004E69FC /* XPlatform.swift in Sources */,
 			);
@@ -515,7 +520,8 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -564,7 +570,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

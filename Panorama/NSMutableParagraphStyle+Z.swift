@@ -24,12 +24,7 @@ extension NSMutableParagraphStyle {
 	convenience init(attributes: [String: Any]) {
 		self.init()
 
-		#if os(iOS)
 		let style = NSMutableParagraphStyle(NSParagraphStyle.default)
-		#elseif os(macOS)
-		let style = NSMutableParagraphStyle(NSParagraphStyle.default())
-		#endif
-
 		self.setParagraphStyle(style)
 		self.setValuesForKeys(attributes)
 	}

@@ -77,7 +77,7 @@ class PanoramaView: XView {
 		// posting notification when zoomed, scrolled or resized
 		typealias T = PanoramaView
 		NotificationCenter.default.addObserver(self, selector: #selector(T.scrollContentDidChange(_:)),
-					name: NSNotification.Name.NSViewBoundsDidChange, object: nil)
+					name: NSView.boundsDidChangeNotification, object: nil)
 		scrollView.allowsMagnification = true
 		scrollView.maxMagnification = self.maximumZoomScale
 		scrollView.minMagnification = self.minimumZoomScale
@@ -134,7 +134,7 @@ class PanoramaView: XView {
 			let contentSize = panorama.bounds.size
 			let delta = self.bounds.size - contentSize
 			let (marginH, marginV) = (max(delta.width, 0) * 0.5, max(delta.height, 0) * 0.5)
-			self.scrollView.contentInsets = EdgeInsets(top: marginV, left: marginH, bottom: marginV, right: marginH) // working?
+			self.scrollView.contentInsets = NSEdgeInsets(top: marginV, left: marginH, bottom: marginV, right: marginH) // working?
 			self.contentView.frame = CGRect(x: 0, y: 0, width: contentSize.width, height: contentSize.height)
 		}
 	}

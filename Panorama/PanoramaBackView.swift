@@ -61,7 +61,7 @@ class PanoramaBackView: XView {
 		#if os(iOS)
 		guard let context = UIGraphicsGetCurrentContext() else { return }
 		#elseif os(macOS)
-		guard let context = NSGraphicsContext.current()?.cgContext else { return }
+		guard let context = NSGraphicsContext.current?.cgContext else { return }
 		#endif
 
 		let targetRect = contentView.convert(self.contentView.bounds, to: self)

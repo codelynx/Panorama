@@ -115,10 +115,10 @@ class ButtonViewlet: Viewlet {
 
 		// title
 		guard let title = self.title else { return }
-		let attributes: [String: Any] = [
-			NSForegroundColorAttributeName: self.foregroundColor(for: self.state),
-			NSParagraphStyleAttributeName: self.paragraphStyle,
-			NSFontAttributeName: style?.font ?? ButtonViewlet.defaultFont
+		let attributes: [NSAttributedStringKey: Any] = [
+			NSAttributedStringKey.foregroundColor: self.foregroundColor(for: self.state),
+			NSAttributedStringKey.paragraphStyle: self.paragraphStyle,
+			NSAttributedStringKey.font: style?.font ?? ButtonViewlet.defaultFont
 		]
 		
 		let attributedString = NSAttributedString(string: title, attributes: attributes)
@@ -131,11 +131,7 @@ class ButtonViewlet: Viewlet {
 	}
 
 	var paragraphStyle: NSParagraphStyle {
-		#if os(iOS)
 		let style = NSMutableParagraphStyle(NSParagraphStyle.default)
-		#elseif os(macOS)
-		let style = NSMutableParagraphStyle(NSParagraphStyle.default())
-		#endif
 		style.alignment = NSTextAlignment.center
 		return style
 	}
