@@ -68,35 +68,35 @@ extension UIBezierPath {
 #if os(macOS)
 extension NSView {
 
-	func setNeedsLayout() {
+	@objc func setNeedsLayout() {
 		self.layout()
 	}
 	
-	func setNeedsDisplay() {
+	@objc func setNeedsDisplay() {
 		self.setNeedsDisplay(self.bounds)
 	}
 
-	func sendSubview(toBack: NSView) {
+	@objc func sendSubview(toBack: NSView) {
 		var subviews = self.subviews
-		if let index = subviews.index(of: toBack) {
+		if let index = subviews.firstIndex(of: toBack) {
 			subviews.remove(at: index)
 			subviews.insert(toBack, at: 0)
 			self.subviews = subviews
 		}
 	}
 	
-	func bringSubview(toFront: NSView) {
+	@objc func bringSubview(toFront: NSView) {
 		var subviews = self.subviews
-		if let index = subviews.index(of: toFront) {
+		if let index = subviews.firstIndex(of: toFront) {
 			subviews.remove(at: index)
 			subviews.append(toFront)
 			self.subviews = subviews
 		}
 	}
 
-	func replaceSubview(subview: NSView, with other: NSView) {
+	@objc func replaceSubview(subview: NSView, with other: NSView) {
 		var subviews = self.subviews
-		if let index = subviews.index(of: subview) {
+		if let index = subviews.firstIndex(of: subview) {
 			subviews.remove(at: index)
 			subviews.insert(other, at: index)
 			self.subviews = subviews

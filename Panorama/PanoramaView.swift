@@ -93,14 +93,14 @@ class PanoramaView: XView {
 	#endif
 
 
-	lazy var setup: (()->()) = {
+	lazy private var setup: (()->()) = {
 		self.backView.frame = self.frame
 		self.addSubviewToFit(self.backView)
 		self.backView.panoramaView = self
 		self.scrollView.frame = self.frame
 		self.contentView.backgroundColor = XColor.clear
 		self.scrollView.backgroundColor = XColor.clear
-		self.sendSubview(toBack: self.backView)
+		self.sendSubviewToBack(self.backView)
 		self.contentView.panoramaView = self
 		self.contentView.translatesAutoresizingMaskIntoConstraints = false
 		#if os(iOS)

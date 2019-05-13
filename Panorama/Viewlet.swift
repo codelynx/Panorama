@@ -291,7 +291,7 @@ class LabelViewlet: Viewlet {
 	var text: String?
 	var horizontalAlignment: Viewlet.HorizontalAlignment = .center
 	var verticalAlignment: Viewlet.VerticalAlignment = .center
-	var _attributes: [NSAttributedStringKey: Any] = [:]
+	var _attributes: [NSAttributedString.Key: Any] = [:]
 
 	var textAlignment: NSTextAlignment {
 		switch horizontalAlignment {
@@ -311,10 +311,10 @@ class LabelViewlet: Viewlet {
 		return style
 	}
 
-	var attribute: [NSAttributedStringKey: Any] {
+	var attribute: [NSAttributedString.Key: Any] {
 		var attributes = _attributes // copy
-		attributes[NSAttributedStringKey.paragraphStyle] = self.paragraphStyle
-		attributes[NSAttributedStringKey.font] = LabelViewlet.defaultFont
+		attributes[NSAttributedString.Key.paragraphStyle] = self.paragraphStyle
+		attributes[NSAttributedString.Key.font] = LabelViewlet.defaultFont
 		return attributes
 	}
 

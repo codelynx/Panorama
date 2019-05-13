@@ -53,4 +53,14 @@ extension XView {
 	}
 	#endif
 	
+	#if os(macOS)
+	func sendSubviewToBack(_ view: XView) {
+		var subviews = self.subviews
+		if let index = subviews.firstIndex(of: view) {
+			let target = subviews.remove(at: index)
+			subviews.append(target)
+		}
+		self.subviews = subviews
+	}
+	#endif
 }

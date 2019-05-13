@@ -115,10 +115,10 @@ class ButtonViewlet: Viewlet {
 
 		// title
 		guard let title = self.title else { return }
-		let attributes: [NSAttributedStringKey: Any] = [
-			NSAttributedStringKey.foregroundColor: self.foregroundColor(for: self.state),
-			NSAttributedStringKey.paragraphStyle: self.paragraphStyle,
-			NSAttributedStringKey.font: style?.font ?? ButtonViewlet.defaultFont
+		let attributes: [NSAttributedString.Key: Any] = [
+			NSAttributedString.Key.foregroundColor: self.foregroundColor(for: self.state),
+			NSAttributedString.Key.paragraphStyle: self.paragraphStyle,
+			NSAttributedString.Key.font: style?.font ?? ButtonViewlet.defaultFont
 		]
 		
 		let attributedString = NSAttributedString(string: title, attributes: attributes)
