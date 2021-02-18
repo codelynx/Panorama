@@ -9,9 +9,9 @@
 #if os(macOS)
 import Cocoa
 
-extension NSEvent {
+public extension NSEvent {
 
-	func location(in panorama: Panorama) -> CGPoint? {
+	public func location(in panorama: Panorama) -> CGPoint? {
 		if let contentView: NSView = panorama.panoramaView?.contentView {
 			return contentView.convert(self.locationInWindow, from: nil)
 		}
