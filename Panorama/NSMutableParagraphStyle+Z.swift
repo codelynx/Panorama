@@ -14,7 +14,7 @@ import Cocoa
 #endif
 
 
-extension NSMutableParagraphStyle {
+public extension NSMutableParagraphStyle {
 
 	convenience init(_ paragraphStyle: NSParagraphStyle) {
 		self.init()

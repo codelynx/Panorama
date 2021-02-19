@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-class Panorama: Viewlet {
+open class Panorama: Viewlet {
 
 	override var frame: CGRect {
 		didSet {

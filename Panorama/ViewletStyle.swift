@@ -20,7 +20,7 @@ import Cocoa
 //	ViewletState
 //
 
-enum ViewletState {
+public enum ViewletState {
 	case normal
 	case highlighted
 }
@@ -29,7 +29,7 @@ enum ViewletState {
 //	ViewletFill
 //
 
-enum ViewletFill {
+public enum ViewletFill {
 
 	enum GradientType {
 		case horizontal
@@ -103,17 +103,15 @@ class ViewletStyle {
 //	Gradient
 //
 
-class Gradient {
+open class Gradient {
 
 	private (set) var locations = [(CGFloat, XColor)]()
 	
 	init?(locations: [(CGFloat, XColor)]) {
 		// first must be 0, last must be 1
 		if let first = locations.first, let last = locations.last, first.0 == 0, last.0 == 1 {
-			if (locations.pair { $0.0 >= $1.0 }.filter { $0 }.count) == 0 {
-				self.locations = locations
-				return
-			}
+			self.locations = locations
+			return
 		}
 		return nil
 	}

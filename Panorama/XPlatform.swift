@@ -20,36 +20,36 @@ import Cocoa
 #if os(iOS)
 
 import UIKit
-typealias XView = UIView
-typealias XImage = UIImage
-typealias XColor = UIColor
-typealias XBezierPath = UIBezierPath
-typealias XScrollView = UIScrollView
-typealias XScrollViewDelegate = UIScrollViewDelegate
-typealias XViewController = UIViewController
-typealias XEvent = UIEvent
-typealias XFont = UIFont
+public typealias XView = UIView
+public typealias XImage = UIImage
+public typealias XColor = UIColor
+public typealias XBezierPath = UIBezierPath
+public typealias XScrollView = UIScrollView
+public typealias XScrollViewDelegate = UIScrollViewDelegate
+public typealias XViewController = UIViewController
+public typealias XEvent = UIEvent
+public typealias XFont = UIFont
 
 #elseif os(macOS)
 
 import Cocoa
-typealias XView = NSView
-typealias XImage = NSImage
-typealias XColor = NSColor
-typealias XBezierPath = NSBezierPath
-typealias XScrollView = NSScrollView
-typealias XViewController = NSViewController
-typealias XEvent = NSEvent
-typealias XFont = NSFont
+public typealias XView = NSView
+public typealias XImage = NSImage
+public typealias XColor = NSColor
+public typealias XBezierPath = NSBezierPath
+public typealias XScrollView = NSScrollView
+public typealias XViewController = NSViewController
+public typealias XEvent = NSEvent
+public typealias XFont = NSFont
 
-protocol XScrollViewDelegate {}
+public protocol XScrollViewDelegate {}
 
 #endif
 
 
 
 #if os(macOS)
-extension NSBezierPath {
+public extension NSBezierPath {
 
 	func addLine(to point: CGPoint) { self.line(to: point) }
 
@@ -57,7 +57,7 @@ extension NSBezierPath {
 #endif
 
 #if os(iOS)
-extension UIBezierPath {
+public extension UIBezierPath {
 
 	func line(to point: CGPoint) { self.addLine(to: point) }
 
@@ -66,7 +66,7 @@ extension UIBezierPath {
 
 
 #if os(macOS)
-extension NSView {
+public extension NSView {
 
 	@objc func setNeedsLayout() {
 		self.layout()
@@ -107,7 +107,7 @@ extension NSView {
 
 
 #if os(macOS)
-extension NSImage {
+public extension NSImage {
 
 	// somehow OSX does not provide CGImage property
 	var cgImage: CGImage? {
@@ -124,7 +124,7 @@ extension NSImage {
 #endif
 
 #if os(macOS)
-extension NSString {
+public extension NSString {
 	/* Method 'sizeWithAttributes' with Objective-C selector 'sizeWithAttributes:' conflicts with method 'size(withAttributes:)' with the same Objective-C selector
 	func size(attributes: [String : Any]? = nil) -> CGSize {
 		return self.size(withAttributes: attributes)

@@ -14,7 +14,7 @@ import Cocoa
 
 
 
-class Viewlet {
+open class Viewlet {
 
 	enum HorizontalAlignment {
 		case left
@@ -286,7 +286,7 @@ class Viewlet {
 
 
 
-class LabelViewlet: Viewlet {
+open class LabelViewlet: Viewlet {
 
 	var text: String?
 	var horizontalAlignment: Viewlet.HorizontalAlignment = .center

@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 
 
-extension CGRect {
+public extension CGRect {
 
 	func transform(to rect: CGRect) -> CGAffineTransform {
 		var t = CGAffineTransform.identity

@@ -9,7 +9,7 @@
 #if os(iOS)
 import UIKit
 
-extension UITouch {
+public extension UITouch {
 
 	func location(in panorama: Panorama) -> CGPoint? {
 		if let panoramaView = panorama.panoramaView {
@@ -28,7 +28,7 @@ extension UITouch {
 }
 
 
-extension UIGestureRecognizer {
+public extension UIGestureRecognizer {
 
 	func location(in panorama: Panorama) -> CGPoint? {
 		if let panoramaView = panorama.panoramaView {

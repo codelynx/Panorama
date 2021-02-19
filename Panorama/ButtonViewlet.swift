@@ -14,7 +14,7 @@ import Cocoa
 
 
 
-class ButtonViewlet: Viewlet {
+open class ButtonViewlet: Viewlet {
 
 	var state: ViewletState = .normal { didSet { self.setNeedsDisplay() } }
 

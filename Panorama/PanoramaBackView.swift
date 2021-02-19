@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-class PanoramaBackView: XView {
+open class PanoramaBackView: XView {
 
 	weak var panoramaView: PanoramaView?
 
@@ -22,7 +22,7 @@ class PanoramaBackView: XView {
 	}
 
 	#if os(macOS)
-	override func layout() {
+	open override func layout() {
 		super.layout()
 		assert(panoramaView != nil)
 		self.backgroundColor = XColor.clear
@@ -55,7 +55,7 @@ class PanoramaBackView: XView {
 */
 
 
-	override func draw(_ rect: CGRect) {
+	open override func draw(_ rect: CGRect) {
 
 		guard let panorama = self.panoramaView?.panorama else { return }
 		#if os(iOS)

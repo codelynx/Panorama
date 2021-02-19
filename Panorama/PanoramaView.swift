@@ -14,7 +14,7 @@ import Cocoa
 
 
 
-class PanoramaView: XView {
+open class PanoramaView: XView {
 
 	var panorama: Panorama? {
 		willSet {
@@ -126,7 +126,7 @@ class PanoramaView: XView {
 	#endif
 	
 	#if os(macOS)
-	override func layout() {
+	open override func layout() {
 		super.layout()
 		self.setup()
 		if let panorama = self.panorama {
@@ -146,14 +146,14 @@ class PanoramaView: XView {
 		self.backView.setNeedsDisplay()
 	}
 	#elseif os(macOS)
-	override func setNeedsDisplay() {
+	public override func setNeedsDisplay() {
 		super.setNeedsDisplay()
 		self.backView.setNeedsDisplay()
 	}
 	#endif
 
 	#if os(macOS)
-	override var isFlipped: Bool {
+	open override var isFlipped: Bool {
 		return true
 	}
 	#endif

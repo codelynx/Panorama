@@ -13,7 +13,7 @@ import Cocoa
 #endif
 
 
-extension XView {
+public extension XView {
 
 	func transform(to view: XView) -> CGAffineTransform {
 		let targetRect = self.convert(self.bounds, to: view)
