@@ -110,7 +110,7 @@ open class PanoramaView: XView {
 	}()
 
 	#if os(iOS)
-	override func layoutSubviews() {
+	open override func layoutSubviews() {
 		super.layoutSubviews()
 		self.setup()
 		if let panorama = self.panorama {
@@ -141,7 +141,7 @@ open class PanoramaView: XView {
 	#endif
 
 	#if os(iOS)
-	override func setNeedsDisplay() {
+	open override func setNeedsDisplay() {
 		super.setNeedsDisplay()
 		self.backView.setNeedsDisplay()
 	}
@@ -192,15 +192,15 @@ open class PanoramaView: XView {
 #if os(iOS)
 extension PanoramaView: UIScrollViewDelegate {
 
-	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+	public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
 		return self.contentView
 	}
 
-	func scrollViewDidZoom(_ scrollView: UIScrollView) {
+	public func scrollViewDidZoom(_ scrollView: UIScrollView) {
 		self.setNeedsDisplay()
 	}
 	
-	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+	public func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		self.setNeedsDisplay()
 	}
 	
@@ -208,7 +208,7 @@ extension PanoramaView: UIScrollViewDelegate {
 #endif
 
 #if os(macOS)
-class FlippedClipView: NSClipView {
+open class FlippedClipView: NSClipView {
 
 	override var isFlipped: Bool { return true }
 

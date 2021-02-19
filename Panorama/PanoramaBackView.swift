@@ -30,7 +30,7 @@ open class PanoramaBackView: XView {
 	#endif
 	
 	#if os(iOS)
-	override func layoutSubviews() {
+	open override func layoutSubviews() {
 		super.layoutSubviews()
 		assert(panoramaView != nil)
 		self.backgroundColor = XColor.clear

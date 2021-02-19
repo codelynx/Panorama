@@ -25,7 +25,7 @@ open class PanoramaContentView: XView {
 	}
 
 	#if os(iOS)
-	override func layoutSubviews() {
+	open override func layoutSubviews() {
 		assert(panoramaView != nil)
 		super.layoutSubviews()
 		self.backgroundColor = XColor.clear
@@ -37,19 +37,19 @@ open class PanoramaContentView: XView {
 	#endif
 
 	#if os(iOS)
-	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.panorama?.touchesBegan(touches, with: event)
 	}
 
-	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.panorama?.touchesMoved(touches, with: event)
 	}
 	
-	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.panorama?.touchesEnded(touches, with: event)
 	}
 	
-	override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.panorama?.touchesCancelled(touches, with: event)
 	}
 	#endif
