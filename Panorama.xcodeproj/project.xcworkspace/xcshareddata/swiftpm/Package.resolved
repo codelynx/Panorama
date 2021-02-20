@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ZKit",
+        "repositoryURL": "https://github.com/codelynx/ZKit",
+        "state": {
+          "branch": "develop",
+          "revision": "90745800107bca785451cbf3bde504f082014141",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
