@@ -1,9 +1,9 @@
 //
-//  ButtonViewlet.swift
-//  Panorama
+//	ButtonViewlet.swift
+//	Panorama
 //
-//  Created by Kaz Yoshikawa on 1/30/17.
-//  Copyright © 2017 Electricwoods LLC., Kaz Yoshikawa. All rights reserved.
+//	Created by Kaz Yoshikawa on 1/30/17.
+//	Copyright © 2017 Electricwoods LLC., Kaz Yoshikawa. All rights reserved.
 //
 
 #if os(iOS)
@@ -11,7 +11,6 @@ import UIKit
 #elseif os(macOS)
 import Cocoa
 #endif
-
 
 
 open class ButtonViewlet: Viewlet {
@@ -82,15 +81,15 @@ open class ButtonViewlet: Viewlet {
 	#endif
 
 	#if os(macOS)
-	override func mouseDown(with event: NSEvent) {
+	open override func mouseDown(with event: NSEvent) {
 		self.state = .highlighted
 	}
 
-	override func mouseDragged(with event: NSEvent) {
+	open override func mouseDragged(with event: NSEvent) {
 		self.setNeedsDisplay()
 	}
 	
-	override func mouseUp(with event: NSEvent) {
+	open override func mouseUp(with event: NSEvent) {
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.125) { // otherwise, may not able to see
 			self.state = .normal
 		}
@@ -99,7 +98,7 @@ open class ButtonViewlet: Viewlet {
 
 	// MARK: -
 
-	override func draw(in context: CGContext) {
+	open override func draw(in context: CGContext) {
 		if let cornerRadius = cornerRadius {
 			let path = self.bounds.cgPath(cornerRadius: cornerRadius)
 			context.addPath(path)
