@@ -194,16 +194,7 @@ open class Viewlet {
 	
 	func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.activeTouch = nil
-		self.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
-			switch self.tapCount {
-			case 0: break
-			case 1: self.singleAction()
-			case 2: self.doubleAction()
-			default: self.multipleAction(count: self.tapCount)
-			}
-			self.tapCount = 0
-			self.activeTouch = nil
-		}
+		self.timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(Self.touchTimerFired(_:)), userInfo: nil, repeats: false)
 	}
 	
 	func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -211,10 +202,20 @@ open class Viewlet {
 		self.tapCount = 0
 		self.activeTouch = nil
 	}
+	
+	@objc private func touchTimerFired(_ timer: Timer) {
+		switch self.tapCount {
+		case 0: break
+		case 1: self.singleAction()
+		case 2: self.doubleAction()
+		default: self.multipleAction(count: self.tapCount)
+		}
+		self.tapCount = 0
+		self.activeTouch = nil
+	}
 	#endif
 
 	#if os(macOS)
-
 	func touchesBegan(with event: NSEvent) {
 	}
 
