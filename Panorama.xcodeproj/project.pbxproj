@@ -46,6 +46,60 @@
 		CCEA22272071BE73006375DA /* UIKit+P.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CC962F0825E3552300176256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC962F0325E3552300176256 /* ZKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CCAB034225E2EF8B00E7D217;
+			remoteInfo = "ZKit-mac";
+		};
+		CC962F0A25E3552300176256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC962F0325E3552300176256 /* ZKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CCAB034F25E2EF9900E7D217;
+			remoteInfo = "ZKit-ios";
+		};
+		CC962F1125E3559200176256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC962F0325E3552300176256 /* ZKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CCAB034E25E2EF9900E7D217;
+			remoteInfo = "ZKit-ios";
+		};
+		CC962F1525E355B800176256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC962F0325E3552300176256 /* ZKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CCAB034125E2EF8B00E7D217;
+			remoteInfo = "ZKit-mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CCA4A88B25E3517300AF4CCC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCA4A88E25E3517E00AF4CCC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewlet.swift; sourceTree = "<group>"; };
 		CC28A4101E2F536D004E69FC /* PanoramaApp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanoramaApp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +125,7 @@
 		CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+P.swift"; sourceTree = "<group>"; };
 		CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewletStyle.swift; sourceTree = "<group>"; };
 		CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableParagraphStyle+Z.swift"; sourceTree = "<group>"; };
+		CC962F0325E3552300176256 /* ZKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZKit.xcodeproj; path = ZKit/ZKit.xcodeproj; sourceTree = "<group>"; };
 		CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewlet.swift; sourceTree = "<group>"; };
 		CCEA22242071BD0B006375DA /* NSEvent+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSEvent+Z.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,12 +151,13 @@
 		CC28A4051E2F534F004E69FC = {
 			isa = PBXGroup;
 			children = (
-				CCA4A6C625E34EB400AF4CCC /* Externals */,
+				CCA4A7F125E3515300AF4CCC /* Externals */,
 				CC28A4361E2F53A2004E69FC /* Panorama */,
 				CC28A4491E2F6485004E69FC /* Shared */,
 				CC28A4121E2F536D004E69FC /* PanoramaApp_ios */,
 				CC28A4281E2F5383004E69FC /* PanoramaApp_mac */,
 				CC28A4111E2F536D004E69FC /* Products */,
+				CCA4A88825E3517300AF4CCC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,11 +222,28 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		CCA4A6C625E34EB400AF4CCC /* Externals */ = {
+		CC962F0425E3552300176256 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC962F0925E3552300176256 /* ZKit.framework */,
+				CC962F0B25E3552300176256 /* ZKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCA4A7F125E3515300AF4CCC /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				CC962F0325E3552300176256 /* ZKit.xcodeproj */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		CCA4A88825E3517300AF4CCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Externals;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,10 +256,12 @@
 				CC28A40C1E2F536D004E69FC /* Sources */,
 				CC28A40D1E2F536D004E69FC /* Frameworks */,
 				CC28A40E1E2F536D004E69FC /* Resources */,
+				CCA4A88B25E3517300AF4CCC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CC962F1225E3559200176256 /* PBXTargetDependency */,
 			);
 			name = PanoramaApp_ios;
 			productName = PanoramaApp_ios;
@@ -200,10 +275,12 @@
 				CC28A4231E2F5383004E69FC /* Sources */,
 				CC28A4241E2F5383004E69FC /* Frameworks */,
 				CC28A4251E2F5383004E69FC /* Resources */,
+				CCA4A88E25E3517E00AF4CCC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CC962F1625E355B800176256 /* PBXTargetDependency */,
 			);
 			name = PanoramaApp_mac;
 			productName = PanoramaApp_mac;
@@ -245,6 +322,12 @@
 			mainGroup = CC28A4051E2F534F004E69FC;
 			productRefGroup = CC28A4111E2F536D004E69FC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CC962F0425E3552300176256 /* Products */;
+					ProjectRef = CC962F0325E3552300176256 /* ZKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CC28A40F1E2F536D004E69FC /* PanoramaApp_ios */,
@@ -252,6 +335,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CC962F0925E3552300176256 /* ZKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZKit.framework;
+			remoteRef = CC962F0825E3552300176256 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CC962F0B25E3552300176256 /* ZKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZKit.framework;
+			remoteRef = CC962F0A25E3552300176256 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CC28A40E1E2F536D004E69FC /* Resources */ = {
@@ -323,6 +423,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC962F1225E3559200176256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ZKit-ios";
+			targetProxy = CC962F1125E3559200176256 /* PBXContainerItemProxy */;
+		};
+		CC962F1625E355B800176256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ZKit-mac";
+			targetProxy = CC962F1525E355B800176256 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CC28A4171E2F536D004E69FC /* Main.storyboard */ = {
