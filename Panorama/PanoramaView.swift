@@ -210,7 +210,7 @@ extension PanoramaView: UIScrollViewDelegate {
 #if os(macOS)
 open class FlippedClipView: NSClipView {
 
-	override var isFlipped: Bool { return true }
+	open override var isFlipped: Bool { return true }
 
 }
 #endif
