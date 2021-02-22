@@ -96,6 +96,7 @@
 		CC28A4051E2F534F004E69FC = {
 			isa = PBXGroup;
 			children = (
+				CCA4A6C625E34EB400AF4CCC /* Externals */,
 				CC28A4361E2F53A2004E69FC /* Panorama */,
 				CC28A4491E2F6485004E69FC /* Shared */,
 				CC28A4121E2F536D004E69FC /* PanoramaApp_ios */,
@@ -163,6 +164,13 @@
 				CC28A44D1E2F65F4004E69FC /* MyViewController.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		CCA4A6C625E34EB400AF4CCC /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Externals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
