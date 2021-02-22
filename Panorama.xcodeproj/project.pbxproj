@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC0F9AB525E12D0D00895D5E /* ZKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC0F9AB425E12D0D00895D5E /* ZKit */; };
 		CC1145751E3B9ABE00ADDA0A /* Viewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */; };
 		CC1145761E3B9AD500ADDA0A /* Viewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */; };
 		CC28A4141E2F536D004E69FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4131E2F536D004E69FC /* AppDelegate.swift */; };
@@ -136,7 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0F9AB525E12D0D00895D5E /* ZKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +264,6 @@
 				CC962F1225E3559200176256 /* PBXTargetDependency */,
 			);
 			name = PanoramaApp_ios;
-			packageProductDependencies = (
-				CC0F9AB425E12D0D00895D5E /* ZKit */,
-			);
 			productName = PanoramaApp_ios;
 			productReference = CC28A4101E2F536D004E69FC /* PanoramaApp_ios.app */;
 			productType = "com.apple.product-type.application";
@@ -325,9 +320,6 @@
 				Base,
 			);
 			mainGroup = CC28A4051E2F534F004E69FC;
-			packageReferences = (
-				CC0F9AB325E12D0D00895D5E /* XCRemoteSwiftPackageReference "ZKit" */,
-			);
 			productRefGroup = CC28A4111E2F536D004E69FC /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -585,10 +577,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PanoramaApp_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-ios";
@@ -639,16 +628,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PanoramaApp_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -699,10 +684,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PanoramaApp_mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -753,17 +735,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PanoramaApp_mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -799,25 +777,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CC0F9AB325E12D0D00895D5E /* XCRemoteSwiftPackageReference "ZKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/codelynx/ZKit";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CC0F9AB425E12D0D00895D5E /* ZKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC0F9AB325E12D0D00895D5E /* XCRemoteSwiftPackageReference "ZKit" */;
-			productName = ZKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC28A4061E2F534F004E69FC /* Project object */;
 }
