@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "http://github.com/codelynx/ZKit",
       "state" : {
-        "branch" : "master",
-        "revision" : "f68c202052b811c2b07f4623528adc1f3d090434"
+        "revision" : "d500b11eabf93a9a109a65ce2fd3540cb9a981db",
+        "version" : "1.0.0"
       }
     }
   ],
