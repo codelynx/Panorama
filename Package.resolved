@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "zkit",
+      "kind" : "remoteSourceControl",
+      "location" : "http://github.com/codelynx/ZKit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f68c202052b811c2b07f4623528adc1f3d090434"
+      }
+    }
+  ],
+  "version" : 2
+}

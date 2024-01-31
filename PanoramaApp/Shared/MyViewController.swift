@@ -12,6 +12,7 @@ import UIKit
 import Cocoa
 #endif
 import ZKit
+import Panorama
 
 
 class MyViewController: XViewController {
@@ -20,6 +21,7 @@ class MyViewController: XViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		assert(self.panoramaView != nil)
 
 		self.panoramaView.panorama = MyPanorama(frame: CGRect(x: 0, y: 0, width: 1024, height: 1024))
 	}

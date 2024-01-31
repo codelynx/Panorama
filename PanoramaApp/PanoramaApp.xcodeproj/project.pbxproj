@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC0721D52B6ADE5E007D03CA /* Panorama in Frameworks */ = {isa = PBXBuildFile; productRef = CC0721D42B6ADE5E007D03CA /* Panorama */; };
+		CC2F4CD02B6AD98B00F37EB4 /* MyPanorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F4CCE2B6AD98B00F37EB4 /* MyPanorama.swift */; };
+		CC2F4CD12B6AD98B00F37EB4 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F4CCF2B6AD98B00F37EB4 /* MyViewController.swift */; };
+		CC2F4CD72B6AD9CD00F37EB4 /* Panorama in Frameworks */ = {isa = PBXBuildFile; productRef = CC2F4CD62B6AD9CD00F37EB4 /* Panorama */; };
+		CC2F4CDA2B6ADA1C00F37EB4 /* ZKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC2F4CD92B6ADA1C00F37EB4 /* ZKit */; };
+		CC7DDB8F2B6AE313000A4308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DDB8E2B6AE313000A4308 /* AppDelegate.swift */; };
+		CC7DDB912B6AE313000A4308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DDB902B6AE313000A4308 /* SceneDelegate.swift */; };
+		CC7DDB962B6AE313000A4308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDB942B6AE313000A4308 /* Main.storyboard */; };
+		CC7DDB982B6AE314000A4308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDB972B6AE314000A4308 /* Assets.xcassets */; };
+		CC7DDB9B2B6AE314000A4308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDB992B6AE314000A4308 /* LaunchScreen.storyboard */; };
+		CC7DDBA02B6AE347000A4308 /* MyPanorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F4CCE2B6AD98B00F37EB4 /* MyPanorama.swift */; };
+		CC7DDBA12B6AE347000A4308 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F4CCF2B6AD98B00F37EB4 /* MyViewController.swift */; };
+		CC7DDBA42B6AE426000A4308 /* Panorama in Frameworks */ = {isa = PBXBuildFile; productRef = CC7DDBA32B6AE426000A4308 /* Panorama */; };
+		CC7DDBA72B6AE43B000A4308 /* ZKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC7DDBA62B6AE43B000A4308 /* ZKit */; };
+		CCB7203C2B6AD93C008B0F0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB7203B2B6AD93C008B0F0D /* AppDelegate.swift */; };
+		CCB720402B6AD93D008B0F0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCB7203F2B6AD93D008B0F0D /* Assets.xcassets */; };
+		CCB720432B6AD93D008B0F0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB720412B6AD93D008B0F0D /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CC2F4CCE2B6AD98B00F37EB4 /* MyPanorama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPanorama.swift; sourceTree = "<group>"; };
+		CC2F4CCF2B6AD98B00F37EB4 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		CC7DDB8C2B6AE313000A4308 /* PanoramaApp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PanoramaApp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC7DDB8E2B6AE313000A4308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC7DDB902B6AE313000A4308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CC7DDB952B6AE313000A4308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC7DDB972B6AE314000A4308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC7DDB9A2B6AE314000A4308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CC7DDB9C2B6AE314000A4308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCB720382B6AD93C008B0F0D /* PanoramaApp-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PanoramaApp-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCB7203B2B6AD93C008B0F0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CCB7203F2B6AD93D008B0F0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCB720422B6AD93D008B0F0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCB720442B6AD93D008B0F0D /* PanoramaApp_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PanoramaApp_mac.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC7DDB892B6AE313000A4308 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC7DDBA72B6AE43B000A4308 /* ZKit in Frameworks */,
+				CC7DDBA42B6AE426000A4308 /* Panorama in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCB720352B6AD93C008B0F0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC2F4CDA2B6ADA1C00F37EB4 /* ZKit in Frameworks */,
+				CC0721D52B6ADE5E007D03CA /* Panorama in Frameworks */,
+				CC2F4CD72B6AD9CD00F37EB4 /* Panorama in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CC2F4CCD2B6AD98B00F37EB4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CC2F4CCE2B6AD98B00F37EB4 /* MyPanorama.swift */,
+				CC2F4CCF2B6AD98B00F37EB4 /* MyViewController.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CC7DDB8D2B6AE313000A4308 /* PanoramaApp-ios */ = {
+			isa = PBXGroup;
+			children = (
+				CC7DDB8E2B6AE313000A4308 /* AppDelegate.swift */,
+				CC7DDB902B6AE313000A4308 /* SceneDelegate.swift */,
+				CC7DDB942B6AE313000A4308 /* Main.storyboard */,
+				CC7DDB972B6AE314000A4308 /* Assets.xcassets */,
+				CC7DDB992B6AE314000A4308 /* LaunchScreen.storyboard */,
+				CC7DDB9C2B6AE314000A4308 /* Info.plist */,
+			);
+			path = "PanoramaApp-ios";
+			sourceTree = "<group>";
+		};
+		CC7DDBA52B6AE43B000A4308 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCB7202D2B6AD8E3008B0F0D = {
+			isa = PBXGroup;
+			children = (
+				CC2F4CCD2B6AD98B00F37EB4 /* Shared */,
+				CCB7203A2B6AD93C008B0F0D /* PanoramaApp-mac */,
+				CC7DDB8D2B6AE313000A4308 /* PanoramaApp-ios */,
+				CCB720392B6AD93C008B0F0D /* Products */,
+				CC7DDBA52B6AE43B000A4308 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CCB720392B6AD93C008B0F0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCB720382B6AD93C008B0F0D /* PanoramaApp-mac.app */,
+				CC7DDB8C2B6AE313000A4308 /* PanoramaApp-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCB7203A2B6AD93C008B0F0D /* PanoramaApp-mac */ = {
+			isa = PBXGroup;
+			children = (
+				CCB7203B2B6AD93C008B0F0D /* AppDelegate.swift */,
+				CCB7203F2B6AD93D008B0F0D /* Assets.xcassets */,
+				CCB720412B6AD93D008B0F0D /* Main.storyboard */,
+				CCB720442B6AD93D008B0F0D /* PanoramaApp_mac.entitlements */,
+			);
+			path = "PanoramaApp-mac";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC7DDB8B2B6AE313000A4308 /* PanoramaApp-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC7DDB9D2B6AE314000A4308 /* Build configuration list for PBXNativeTarget "PanoramaApp-ios" */;
+			buildPhases = (
+				CC7DDB882B6AE313000A4308 /* Sources */,
+				CC7DDB892B6AE313000A4308 /* Frameworks */,
+				CC7DDB8A2B6AE313000A4308 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PanoramaApp-ios";
+			packageProductDependencies = (
+				CC7DDBA32B6AE426000A4308 /* Panorama */,
+				CC7DDBA62B6AE43B000A4308 /* ZKit */,
+			);
+			productName = "PanoramaApp-ios";
+			productReference = CC7DDB8C2B6AE313000A4308 /* PanoramaApp-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CCB720372B6AD93C008B0F0D /* PanoramaApp-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCB720452B6AD93D008B0F0D /* Build configuration list for PBXNativeTarget "PanoramaApp-mac" */;
+			buildPhases = (
+				CCB720342B6AD93C008B0F0D /* Sources */,
+				CCB720352B6AD93C008B0F0D /* Frameworks */,
+				CCB720362B6AD93C008B0F0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PanoramaApp-mac";
+			packageProductDependencies = (
+				CC2F4CD62B6AD9CD00F37EB4 /* Panorama */,
+				CC2F4CD92B6ADA1C00F37EB4 /* ZKit */,
+				CC0721D42B6ADE5E007D03CA /* Panorama */,
+			);
+			productName = "PanoramaApp-mac";
+			productReference = CCB720382B6AD93C008B0F0D /* PanoramaApp-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCB7202E2B6AD8E3008B0F0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					CC7DDB8B2B6AE313000A4308 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					CCB720372B6AD93C008B0F0D = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = CCB720312B6AD8E3008B0F0D /* Build configuration list for PBXProject "PanoramaApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCB7202D2B6AD8E3008B0F0D;
+			packageReferences = (
+				CC2F4CD82B6ADA1C00F37EB4 /* XCLocalSwiftPackageReference "../../ZKit" */,
+				CC7DDBA22B6AE426000A4308 /* XCLocalSwiftPackageReference ".." */,
+			);
+			productRefGroup = CCB720392B6AD93C008B0F0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCB720372B6AD93C008B0F0D /* PanoramaApp-mac */,
+				CC7DDB8B2B6AE313000A4308 /* PanoramaApp-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC7DDB8A2B6AE313000A4308 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC7DDB9B2B6AE314000A4308 /* LaunchScreen.storyboard in Resources */,
+				CC7DDB982B6AE314000A4308 /* Assets.xcassets in Resources */,
+				CC7DDB962B6AE313000A4308 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCB720362B6AD93C008B0F0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCB720402B6AD93D008B0F0D /* Assets.xcassets in Resources */,
+				CCB720432B6AD93D008B0F0D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC7DDB882B6AE313000A4308 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC7DDBA02B6AE347000A4308 /* MyPanorama.swift in Sources */,
+				CC7DDB8F2B6AE313000A4308 /* AppDelegate.swift in Sources */,
+				CC7DDBA12B6AE347000A4308 /* MyViewController.swift in Sources */,
+				CC7DDB912B6AE313000A4308 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCB720342B6AD93C008B0F0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC2F4CD02B6AD98B00F37EB4 /* MyPanorama.swift in Sources */,
+				CC2F4CD12B6AD98B00F37EB4 /* MyViewController.swift in Sources */,
+				CCB7203C2B6AD93C008B0F0D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CC7DDB942B6AE313000A4308 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC7DDB952B6AE313000A4308 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CC7DDB992B6AE314000A4308 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC7DDB9A2B6AE314000A4308 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CCB720412B6AD93D008B0F0D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCB720422B6AD93D008B0F0D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CC7DDB9E2B6AE314000A4308 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PanoramaApp-ios/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC7DDB9F2B6AE314000A4308 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PanoramaApp-ios/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCB720322B6AD8E3008B0F0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		CCB720332B6AD8E3008B0F0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		CCB720462B6AD93D008B0F0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "PanoramaApp-mac/PanoramaApp_mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CCB720472B6AD93D008B0F0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "PanoramaApp-mac/PanoramaApp_mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC7DDB9D2B6AE314000A4308 /* Build configuration list for PBXNativeTarget "PanoramaApp-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC7DDB9E2B6AE314000A4308 /* Debug */,
+				CC7DDB9F2B6AE314000A4308 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCB720312B6AD8E3008B0F0D /* Build configuration list for PBXProject "PanoramaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCB720322B6AD8E3008B0F0D /* Debug */,
+				CCB720332B6AD8E3008B0F0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCB720452B6AD93D008B0F0D /* Build configuration list for PBXNativeTarget "PanoramaApp-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCB720462B6AD93D008B0F0D /* Debug */,
+				CCB720472B6AD93D008B0F0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		CC2F4CD82B6ADA1C00F37EB4 /* XCLocalSwiftPackageReference "../../ZKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../ZKit;
+		};
+		CC7DDBA22B6AE426000A4308 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC0721D42B6ADE5E007D03CA /* Panorama */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Panorama;
+		};
+		CC2F4CD62B6AD9CD00F37EB4 /* Panorama */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Panorama;
+		};
+		CC2F4CD92B6ADA1C00F37EB4 /* ZKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ZKit;
+		};
+		CC7DDBA32B6AE426000A4308 /* Panorama */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Panorama;
+		};
+		CC7DDBA62B6AE43B000A4308 /* ZKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC2F4CD82B6ADA1C00F37EB4 /* XCLocalSwiftPackageReference "../../ZKit" */;
+			productName = ZKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CCB7202E2B6AD8E3008B0F0D /* Project object */;
+}

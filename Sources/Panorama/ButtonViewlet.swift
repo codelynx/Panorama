@@ -99,7 +99,7 @@ open class ButtonViewlet: Viewlet {
 
 	// MARK: -
 
-	override func draw(in context: CGContext) {
+	public override func draw(in context: CGContext) {
 		if let cornerRadius = cornerRadius {
 			let path = self.bounds.cgPath(cornerRadius: cornerRadius)
 			context.addPath(path)

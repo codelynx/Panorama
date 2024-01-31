@@ -16,7 +16,7 @@ import Cocoa
 
 open class PanoramaView: XView {
 
-	var panorama: Panorama? {
+	public var panorama: Panorama? {
 		willSet {
 		}
 		didSet {
@@ -158,30 +158,30 @@ open class PanoramaView: XView {
 	}
 	#endif
 
-	var maximumZoomScale: CGFloat {
+	public var maximumZoomScale: CGFloat {
 		return self.panorama?.maximumZoomScale ?? 1.0
 	}
 
-	var minimumZoomScale: CGFloat {
+	public var minimumZoomScale: CGFloat {
 		return self.panorama?.minimumZoomScale ?? 1.0
 	}
 
 	#if os(iOS)
-	var minimumNumberOfTouchesToScroll: Int {
+	private var minimumNumberOfTouchesToScroll: Int {
 		get { return self.scrollView.panGestureRecognizer.minimumNumberOfTouches }
 		set { self.scrollView.panGestureRecognizer.minimumNumberOfTouches = newValue }
 	}
 	#endif
 	
 	#if os(iOS)
-	var scrollEnabled: Bool {
+	private var scrollEnabled: Bool {
 		get { return self.scrollView.isScrollEnabled }
 		set { self.scrollView.isScrollEnabled = newValue }
 	}
 	#endif
 	
 	#if os(iOS)
-	var delaysContentTouches: Bool {
+	public var delaysContentTouches: Bool {
 		get { return self.scrollView.delaysContentTouches }
 		set { self.scrollView.delaysContentTouches = newValue }
 	}

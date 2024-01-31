@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -24,8 +24,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		CC1145751E3B9ABE00ADDA0A /* Viewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */; };
-		CC1145761E3B9AD500ADDA0A /* Viewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */; };
 		CC28A4141E2F536D004E69FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4131E2F536D004E69FC /* AppDelegate.swift */; };
 		CC28A4191E2F536D004E69FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC28A4171E2F536D004E69FC /* Main.storyboard */; };
 		CC28A41B1E2F536D004E69FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC28A41A1E2F536D004E69FC /* Assets.xcassets */; };
@@ -33,29 +31,10 @@
 		CC28A42A1E2F5383004E69FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4291E2F5383004E69FC /* AppDelegate.swift */; };
 		CC28A42E1E2F5383004E69FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC28A42D1E2F5383004E69FC /* Assets.xcassets */; };
 		CC28A4311E2F5383004E69FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC28A42F1E2F5383004E69FC /* Main.storyboard */; };
-		CC28A4381E2F53D7004E69FC /* XPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4371E2F53D7004E69FC /* XPlatform.swift */; };
-		CC28A4391E2F53D7004E69FC /* XPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4371E2F53D7004E69FC /* XPlatform.swift */; };
-		CC28A43B1E2F5417004E69FC /* Panorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A43A1E2F5417004E69FC /* Panorama.swift */; };
-		CC28A43C1E2F5417004E69FC /* Panorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A43A1E2F5417004E69FC /* Panorama.swift */; };
-		CC28A43E1E2F5426004E69FC /* PanoramaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A43D1E2F5426004E69FC /* PanoramaView.swift */; };
-		CC28A43F1E2F5426004E69FC /* PanoramaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A43D1E2F5426004E69FC /* PanoramaView.swift */; };
-		CC28A4411E2F5653004E69FC /* PanoramaBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4401E2F5653004E69FC /* PanoramaBackView.swift */; };
-		CC28A4421E2F5653004E69FC /* PanoramaBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4401E2F5653004E69FC /* PanoramaBackView.swift */; };
-		CC28A4441E2F5855004E69FC /* XView+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4431E2F5855004E69FC /* XView+Z.swift */; };
-		CC28A4451E2F5855004E69FC /* XView+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4431E2F5855004E69FC /* XView+Z.swift */; };
-		CC28A4471E2F593C004E69FC /* CoreGraphics+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4461E2F593C004E69FC /* CoreGraphics+Z.swift */; };
-		CC28A4481E2F593C004E69FC /* CoreGraphics+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4461E2F593C004E69FC /* CoreGraphics+Z.swift */; };
 		CC28A44B1E2F64EE004E69FC /* MyPanorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A44A1E2F64EE004E69FC /* MyPanorama.swift */; };
 		CC28A44C1E2F64EE004E69FC /* MyPanorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A44A1E2F64EE004E69FC /* MyPanorama.swift */; };
 		CC28A44E1E2F65F4004E69FC /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A44D1E2F65F4004E69FC /* MyViewController.swift */; };
 		CC28A44F1E2F65F4004E69FC /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A44D1E2F65F4004E69FC /* MyViewController.swift */; };
-		CC28A4511E2FACAF004E69FC /* PanoramaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */; };
-		CC28A4521E2FACAF004E69FC /* PanoramaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */; };
-		CC28A4541E2FB7EF004E69FC /* UIKit+P.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */; };
-		CC2B5BA11E3D0CAC008062DA /* ViewletStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */; };
-		CC2B5BA21E3D0CAC008062DA /* ViewletStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */; };
-		CC2B5BA71E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */; };
-		CC2B5BA81E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */; };
 		CC2C1F6725EA0E6000E6A1A9 /* Panorama_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = CC2C1F6525EA0E6000E6A1A9 /* Panorama_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC2C1F6A25EA0E6000E6A1A9 /* Panorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2C1F6325EA0E6000E6A1A9 /* Panorama.framework */; };
 		CC2C1F6B25EA0E6000E6A1A9 /* Panorama.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC2C1F6325EA0E6000E6A1A9 /* Panorama.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -75,24 +54,21 @@
 		CC2C1F9325EA121500E6A1A9 /* NSEvent+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA22242071BD0B006375DA /* NSEvent+Z.swift */; };
 		CC2C1F9425EA121500E6A1A9 /* ButtonViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */; };
 		CC2C1F9525EA121500E6A1A9 /* XPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4371E2F53D7004E69FC /* XPlatform.swift */; };
-		CC2C1F9825EA121600E6A1A9 /* PanoramaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A43D1E2F5426004E69FC /* PanoramaView.swift */; };
-		CC2C1F9925EA121600E6A1A9 /* Viewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */; };
-		CC2C1F9A25EA121600E6A1A9 /* Panorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A43A1E2F5417004E69FC /* Panorama.swift */; };
-		CC2C1F9B25EA121600E6A1A9 /* CoreGraphics+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4461E2F593C004E69FC /* CoreGraphics+Z.swift */; };
-		CC2C1F9C25EA121600E6A1A9 /* PanoramaBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4401E2F5653004E69FC /* PanoramaBackView.swift */; };
-		CC2C1F9D25EA121600E6A1A9 /* NSMutableParagraphStyle+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */; };
-		CC2C1F9E25EA121600E6A1A9 /* PanoramaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */; };
-		CC2C1F9F25EA121600E6A1A9 /* XView+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4431E2F5855004E69FC /* XView+Z.swift */; };
-		CC2C1FA025EA121600E6A1A9 /* UIKit+P.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */; };
-		CC2C1FA125EA121600E6A1A9 /* ViewletStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */; };
-		CC2C1FA225EA121600E6A1A9 /* NSEvent+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA22242071BD0B006375DA /* NSEvent+Z.swift */; };
-		CC2C1FA325EA121600E6A1A9 /* ButtonViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */; };
-		CC2C1FA425EA121600E6A1A9 /* XPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4371E2F53D7004E69FC /* XPlatform.swift */; };
-		CCA1B5501E3F077800FBC83A /* ButtonViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */; };
-		CCA1B5511E3F077800FBC83A /* ButtonViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */; };
-		CCEA22252071BD0B006375DA /* NSEvent+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA22242071BD0B006375DA /* NSEvent+Z.swift */; };
-		CCEA22262071BD0B006375DA /* NSEvent+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA22242071BD0B006375DA /* NSEvent+Z.swift */; };
-		CCEA22272071BE73006375DA /* UIKit+P.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */; };
+		CC5EF4E62B6A399D00007D9C /* ZKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC5EF4E52B6A399D00007D9C /* ZKit */; };
+		CC9579102B6A37D1003B976C /* UIKit+P.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */; };
+		CC9579112B6A37D1003B976C /* XView+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4431E2F5855004E69FC /* XView+Z.swift */; };
+		CC9579122B6A37D1003B976C /* PanoramaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A43D1E2F5426004E69FC /* PanoramaView.swift */; };
+		CC9579132B6A37D1003B976C /* Panorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A43A1E2F5417004E69FC /* Panorama.swift */; };
+		CC9579142B6A37D1003B976C /* CoreGraphics+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4461E2F593C004E69FC /* CoreGraphics+Z.swift */; };
+		CC9579152B6A37D1003B976C /* NSMutableParagraphStyle+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */; };
+		CC9579162B6A37D1003B976C /* NSEvent+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA22242071BD0B006375DA /* NSEvent+Z.swift */; };
+		CC9579172B6A37D1003B976C /* PanoramaBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4401E2F5653004E69FC /* PanoramaBackView.swift */; };
+		CC9579182B6A37D1003B976C /* PanoramaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */; };
+		CC9579192B6A37D1003B976C /* Viewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */; };
+		CC95791A2B6A37D1003B976C /* ButtonViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */; };
+		CC95791B2B6A37D1003B976C /* ViewletStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */; };
+		CC95791C2B6A37D1003B976C /* XPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28A4371E2F53D7004E69FC /* XPlatform.swift */; };
+		CC9579232B6A393A003B976C /* ZKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC9579222B6A393A003B976C /* ZKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9579232B6A393A003B976C /* ZKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5EF4E62B6A399D00007D9C /* ZKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +215,7 @@
 		CC28A4051E2F534F004E69FC = {
 			isa = PBXGroup;
 			children = (
-				CCA4A7F125E3515300AF4CCC /* Externals */,
-				CC28A4361E2F53A2004E69FC /* Panorama */,
+				CC95790B2B6A370F003B976C /* Sources */,
 				CC28A4491E2F6485004E69FC /* Shared */,
 				CC28A4121E2F536D004E69FC /* PanoramaApp_ios */,
 				CC28A4281E2F5383004E69FC /* PanoramaApp_mac */,
@@ -283,26 +260,6 @@
 			path = PanoramaApp_mac;
 			sourceTree = "<group>";
 		};
-		CC28A4361E2F53A2004E69FC /* Panorama */ = {
-			isa = PBXGroup;
-			children = (
-				CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */,
-				CC28A4461E2F593C004E69FC /* CoreGraphics+Z.swift */,
-				CCEA22242071BD0B006375DA /* NSEvent+Z.swift */,
-				CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */,
-				CC28A43A1E2F5417004E69FC /* Panorama.swift */,
-				CC28A4401E2F5653004E69FC /* PanoramaBackView.swift */,
-				CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */,
-				CC28A43D1E2F5426004E69FC /* PanoramaView.swift */,
-				CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */,
-				CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */,
-				CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */,
-				CC28A4371E2F53D7004E69FC /* XPlatform.swift */,
-				CC28A4431E2F5855004E69FC /* XView+Z.swift */,
-			);
-			path = Panorama;
-			sourceTree = "<group>";
-		};
 		CC28A4491E2F6485004E69FC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,11 +287,32 @@
 			path = "Panorama-mac";
 			sourceTree = "<group>";
 		};
-		CCA4A7F125E3515300AF4CCC /* Externals */ = {
+		CC95790B2B6A370F003B976C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CC95790C2B6A370F003B976C /* Panorama */,
 			);
-			path = Externals;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CC95790C2B6A370F003B976C /* Panorama */ = {
+			isa = PBXGroup;
+			children = (
+				CCA1B54F1E3F077800FBC83A /* ButtonViewlet.swift */,
+				CC28A4461E2F593C004E69FC /* CoreGraphics+Z.swift */,
+				CCEA22242071BD0B006375DA /* NSEvent+Z.swift */,
+				CC2B5BA61E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift */,
+				CC28A43A1E2F5417004E69FC /* Panorama.swift */,
+				CC28A4401E2F5653004E69FC /* PanoramaBackView.swift */,
+				CC28A4501E2FACAF004E69FC /* PanoramaContentView.swift */,
+				CC28A43D1E2F5426004E69FC /* PanoramaView.swift */,
+				CC28A4531E2FB7EF004E69FC /* UIKit+P.swift */,
+				CC1145741E3B9ABE00ADDA0A /* Viewlet.swift */,
+				CC2B5BA01E3D0CAC008062DA /* ViewletStyle.swift */,
+				CC28A4371E2F53D7004E69FC /* XPlatform.swift */,
+				CC28A4431E2F5855004E69FC /* XView+Z.swift */,
+			);
+			path = Panorama;
 			sourceTree = "<group>";
 		};
 		CCA4A88825E3517300AF4CCC /* Frameworks */ = {
@@ -418,6 +396,9 @@
 			dependencies = (
 			);
 			name = "Panorama-ios";
+			packageProductDependencies = (
+				CC9579222B6A393A003B976C /* ZKit */,
+			);
 			productName = "Panorama-ios";
 			productReference = CC2C1F6325EA0E6000E6A1A9 /* Panorama.framework */;
 			productType = "com.apple.product-type.framework";
@@ -436,6 +417,9 @@
 			dependencies = (
 			);
 			name = "Panorama-mac";
+			packageProductDependencies = (
+				CC5EF4E52B6A399D00007D9C /* ZKit */,
+			);
 			productName = "Panorama-mac";
 			productReference = CC2C1F7525EA0E8B00E6A1A9 /* Panorama_mac.framework */;
 			productType = "com.apple.product-type.framework";
@@ -446,8 +430,9 @@
 		CC28A4061E2F534F004E69FC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = "Electricwoods LLC., Kaz Yoshikawa";
 				TargetAttributes = {
 					CC28A40F1E2F536D004E69FC = {
@@ -488,6 +473,9 @@
 				Base,
 			);
 			mainGroup = CC28A4051E2F534F004E69FC;
+			packageReferences = (
+				CC9579212B6A393A003B976C /* XCLocalSwiftPackageReference "../ZKit" */,
+			);
 			productRefGroup = CC28A4111E2F536D004E69FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -542,22 +530,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC28A43B1E2F5417004E69FC /* Panorama.swift in Sources */,
 				CC28A4141E2F536D004E69FC /* AppDelegate.swift in Sources */,
-				CC28A4441E2F5855004E69FC /* XView+Z.swift in Sources */,
-				CC1145751E3B9ABE00ADDA0A /* Viewlet.swift in Sources */,
-				CC2B5BA71E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift in Sources */,
 				CC28A44B1E2F64EE004E69FC /* MyPanorama.swift in Sources */,
 				CC28A44E1E2F65F4004E69FC /* MyViewController.swift in Sources */,
-				CC28A4511E2FACAF004E69FC /* PanoramaContentView.swift in Sources */,
-				CC28A4541E2FB7EF004E69FC /* UIKit+P.swift in Sources */,
-				CC28A43E1E2F5426004E69FC /* PanoramaView.swift in Sources */,
-				CCA1B5501E3F077800FBC83A /* ButtonViewlet.swift in Sources */,
-				CCEA22252071BD0B006375DA /* NSEvent+Z.swift in Sources */,
-				CC2B5BA11E3D0CAC008062DA /* ViewletStyle.swift in Sources */,
-				CC28A4411E2F5653004E69FC /* PanoramaBackView.swift in Sources */,
-				CC28A4471E2F593C004E69FC /* CoreGraphics+Z.swift in Sources */,
-				CC28A4381E2F53D7004E69FC /* XPlatform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,22 +540,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC28A43C1E2F5417004E69FC /* Panorama.swift in Sources */,
 				CC28A42A1E2F5383004E69FC /* AppDelegate.swift in Sources */,
-				CC28A4451E2F5855004E69FC /* XView+Z.swift in Sources */,
-				CC1145761E3B9AD500ADDA0A /* Viewlet.swift in Sources */,
-				CC2B5BA81E3DAE2F008062DA /* NSMutableParagraphStyle+Z.swift in Sources */,
 				CC28A44C1E2F64EE004E69FC /* MyPanorama.swift in Sources */,
-				CC28A43F1E2F5426004E69FC /* PanoramaView.swift in Sources */,
-				CC28A4521E2FACAF004E69FC /* PanoramaContentView.swift in Sources */,
-				CC28A4421E2F5653004E69FC /* PanoramaBackView.swift in Sources */,
-				CCA1B5511E3F077800FBC83A /* ButtonViewlet.swift in Sources */,
-				CCEA22262071BD0B006375DA /* NSEvent+Z.swift in Sources */,
-				CC2B5BA21E3D0CAC008062DA /* ViewletStyle.swift in Sources */,
-				CC28A4481E2F593C004E69FC /* CoreGraphics+Z.swift in Sources */,
-				CCEA22272071BE73006375DA /* UIKit+P.swift in Sources */,
 				CC28A44F1E2F65F4004E69FC /* MyViewController.swift in Sources */,
-				CC28A4391E2F53D7004E69FC /* XPlatform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,19 +570,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC2C1F9F25EA121600E6A1A9 /* XView+Z.swift in Sources */,
-				CC2C1F9925EA121600E6A1A9 /* Viewlet.swift in Sources */,
-				CC2C1FA425EA121600E6A1A9 /* XPlatform.swift in Sources */,
-				CC2C1FA125EA121600E6A1A9 /* ViewletStyle.swift in Sources */,
-				CC2C1F9D25EA121600E6A1A9 /* NSMutableParagraphStyle+Z.swift in Sources */,
-				CC2C1F9E25EA121600E6A1A9 /* PanoramaContentView.swift in Sources */,
-				CC2C1F9A25EA121600E6A1A9 /* Panorama.swift in Sources */,
-				CC2C1FA325EA121600E6A1A9 /* ButtonViewlet.swift in Sources */,
-				CC2C1F9B25EA121600E6A1A9 /* CoreGraphics+Z.swift in Sources */,
-				CC2C1F9825EA121600E6A1A9 /* PanoramaView.swift in Sources */,
-				CC2C1F9C25EA121600E6A1A9 /* PanoramaBackView.swift in Sources */,
-				CC2C1FA225EA121600E6A1A9 /* NSEvent+Z.swift in Sources */,
-				CC2C1FA025EA121600E6A1A9 /* UIKit+P.swift in Sources */,
+				CC9579182B6A37D1003B976C /* PanoramaContentView.swift in Sources */,
+				CC9579132B6A37D1003B976C /* Panorama.swift in Sources */,
+				CC95791C2B6A37D1003B976C /* XPlatform.swift in Sources */,
+				CC95791B2B6A37D1003B976C /* ViewletStyle.swift in Sources */,
+				CC9579152B6A37D1003B976C /* NSMutableParagraphStyle+Z.swift in Sources */,
+				CC9579122B6A37D1003B976C /* PanoramaView.swift in Sources */,
+				CC9579142B6A37D1003B976C /* CoreGraphics+Z.swift in Sources */,
+				CC95791A2B6A37D1003B976C /* ButtonViewlet.swift in Sources */,
+				CC9579172B6A37D1003B976C /* PanoramaBackView.swift in Sources */,
+				CC9579192B6A37D1003B976C /* Viewlet.swift in Sources */,
+				CC9579112B6A37D1003B976C /* XView+Z.swift in Sources */,
+				CC9579102B6A37D1003B976C /* UIKit+P.swift in Sources */,
+				CC9579162B6A37D1003B976C /* NSEvent+Z.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,8 +671,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -744,7 +708,9 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -752,6 +718,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
@@ -800,7 +767,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PanoramaApp_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-ios";
@@ -852,12 +822,16 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PanoramaApp_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-ios";
 				PRODUCT_NAME = PanoramaApp;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -890,6 +864,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 2P97EM4L4N;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -909,8 +884,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PanoramaApp_mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-mac";
@@ -948,6 +926,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 2P97EM4L4N;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -961,13 +940,17 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PanoramaApp_mac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.PanoramaApp-mac";
 				PRODUCT_NAME = PanoramaApp;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -987,6 +970,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -996,6 +980,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1007,14 +992,23 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Panorama-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.Panorama-ios";
 				PRODUCT_NAME = Panorama;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1039,6 +1033,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1048,21 +1043,32 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Panorama-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.Panorama-ios";
 				PRODUCT_NAME = Panorama;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1091,12 +1097,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2P97EM4L4N;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1108,8 +1116,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Panorama-mac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.Panorama-mac";
@@ -1145,20 +1159,28 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2P97EM4L4N;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Panorama-mac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.Panorama-mac";
@@ -1166,7 +1188,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1176,7 +1199,9 @@
 		CC2C1FA925EA12BD00E6A1A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2P97EM4L4N;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1185,7 +1210,9 @@
 		CC2C1FAA25EA12BD00E6A1A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2P97EM4L4N;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1249,6 +1276,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		CC9579212B6A393A003B976C /* XCLocalSwiftPackageReference "../ZKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../ZKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC5EF4E52B6A399D00007D9C /* ZKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC9579212B6A393A003B976C /* XCLocalSwiftPackageReference "../ZKit" */;
+			productName = ZKit;
+		};
+		CC9579222B6A393A003B976C /* ZKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ZKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC28A4061E2F534F004E69FC /* Project object */;
 }

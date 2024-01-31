@@ -16,7 +16,7 @@ import Cocoa
 
 open class Viewlet {
 
-	enum HorizontalAlignment {
+	public enum HorizontalAlignment {
 		case left
 		case center
 		case right
@@ -30,7 +30,7 @@ open class Viewlet {
 		}
 	}
 	
-	enum VerticalAlignment {
+	public enum VerticalAlignment {
 		case top
 		case center
 		case bottom
@@ -38,33 +38,33 @@ open class Viewlet {
 
 	weak var _parent: Viewlet?
 
-	var parent: Viewlet? {
+	public var parent: Viewlet? {
 		get { return _parent }
 	}
-	var subviewlets = [Viewlet]()
+	public var subviewlets = [Viewlet]()
 
 	private var _bounds: CGRect
-	var bounds: CGRect { return _bounds }
+	public var bounds: CGRect { return _bounds }
 
-	var frame: CGRect {
+	public var frame: CGRect {
 		get { return self.bounds.applying(transform) }
 		set {
 			_bounds = CGRect(origin: CGPoint.zero, size: newValue.size)
 			transform = _bounds.transform(to: newValue)
 		}
 	}
-	var transform: CGAffineTransform
+	public var transform: CGAffineTransform
 
 	public init(frame: CGRect) {
 		_bounds = CGRect(origin: CGPoint.zero, size: frame.size)
 		transform = _bounds.transform(to: frame)
 	}
 
-	func setNeedsDisplay() {
+	public func setNeedsDisplay() {
 		_parent?.setNeedsDisplay()
 	}
 
-	func addViewlet(_ viewlet: Viewlet) {
+	public func addViewlet(_ viewlet: Viewlet) {
 		viewlet._parent = self
 		self.subviewlets.append(viewlet)
 		self.setNeedsDisplay()
@@ -85,12 +85,12 @@ open class Viewlet {
 		}
 	}
 	
-	func draw(in context: CGContext) {
+	open func draw(in context: CGContext) {
 	}
 
 	// MARK: -
 
-	func findViewlet(point: CGPoint) -> Viewlet? {
+	public func findViewlet(point: CGPoint) -> Viewlet? {
 		let point = point.applying(self.transform.inverted())
 		for viewlet in self.subviewlets {
 			if let viewlet = viewlet.findViewlet(point: point) {
@@ -103,21 +103,21 @@ open class Viewlet {
 
 	// MARK: -
 
-	var panorama: Panorama? {
+	public var panorama: Panorama? {
 		return self.parent?.panorama
 	}
 
-	var transformToPanorama: CGAffineTransform? {
+	public var transformToPanorama: CGAffineTransform? {
 		return self.parent?.transformToPanorama?.concatenating(self.transform)
 	}
 
-	var transformFromPanorama: CGAffineTransform? {
+	public var transformFromPanorama: CGAffineTransform? {
 		return self.transformToPanorama?.inverted()
 	}
 
 	// MARK: -
 
-	func drawText(in context: CGContext, rect: CGRect, attributedString: NSAttributedString, verticalAlignment: VerticalAlignment ) {
+	public func drawText(in context: CGContext, rect: CGRect, attributedString: NSAttributedString, verticalAlignment: VerticalAlignment ) {
 		// prepare for Core Text
 		context.translateBy(x: 0, y: self.bounds.height)
 		context.scaleBy(x: 1, y: -1)
@@ -318,7 +318,7 @@ open class LabelViewlet: Viewlet {
 		return attributes
 	}
 
-	override func draw(in context: CGContext) {
+	public override func draw(in context: CGContext) {
 		guard let text = self.text else { return }
 		let attributes = self.attribute
 		let attributedString = NSAttributedString(string: text, attributes: attributes)

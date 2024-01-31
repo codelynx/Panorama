@@ -654,7 +654,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PanoramaApp" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PanoramaApp_mac" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -673,7 +673,7 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="sIc-tj-pH1" kind="relationship" relationship="window.shadowedContentViewController" id="XXF-YS-SK6"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -681,31 +681,31 @@
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
         <!--My View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="z2o-hq-KVA">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MyViewController" customModule="PanoramaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="sIc-tj-pH1" customClass="MyViewController" customModule="PanoramaApp_mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="HXT-aO-b9l">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="iNs-N1-Up2" customClass="PanoramaView" customModule="PanoramaApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Yru-jE-U8f" customClass="PanoramaView" customModule="Panorama">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="iNs-N1-Up2" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="6Pu-R9-hGY"/>
-                            <constraint firstAttribute="trailing" secondItem="iNs-N1-Up2" secondAttribute="trailing" id="Gg3-S5-S0J"/>
-                            <constraint firstAttribute="bottom" secondItem="iNs-N1-Up2" secondAttribute="bottom" id="pHM-0m-yQT"/>
-                            <constraint firstItem="iNs-N1-Up2" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="rQF-p0-Pgp"/>
+                            <constraint firstAttribute="bottom" secondItem="Yru-jE-U8f" secondAttribute="bottom" id="0IA-0H-hSy"/>
+                            <constraint firstAttribute="trailing" secondItem="Yru-jE-U8f" secondAttribute="trailing" id="IKQ-48-bNc"/>
+                            <constraint firstItem="Yru-jE-U8f" firstAttribute="leading" secondItem="HXT-aO-b9l" secondAttribute="leading" id="Wx6-cK-02l"/>
+                            <constraint firstItem="Yru-jE-U8f" firstAttribute="top" secondItem="HXT-aO-b9l" secondAttribute="top" id="zAW-Vk-XXx"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="panoramaView" destination="iNs-N1-Up2" id="9q6-41-oX4"/>
+                        <outlet property="panoramaView" destination="Yru-jE-U8f" id="txt-Cs-cgl"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="aId-x4-AFp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="760"/>
         </scene>
     </scenes>
 </document>
