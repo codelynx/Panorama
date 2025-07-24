@@ -182,7 +182,7 @@ You don't need to worry about these differences - just draw in your panorama's c
 1. In Xcode, go to **File → Add Package Dependencies**
 2. Enter the repository URL:
    ```
-   https://github.com/yourusername/Panorama.git
+   https://github.com/codelynx/Panorama.git
    ```
 3. Choose version 2.0.0 or later
 4. Add to your app target
@@ -193,7 +193,7 @@ Alternatively, add to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/Panorama.git", from: "2.0.0")
+    .package(url: "https://github.com/codelynx/Panorama.git", from: "2.0.0")
 ],
 targets: [
     .target(
@@ -2101,16 +2101,16 @@ Now that you have a solid understanding of Panorama, here are some ideas to expl
 - [API Reference](API_Reference.md) - Detailed API documentation
 - [Migration Guide](Migration_Guide.md) - Upgrading from 1.x
 - [Xcode Configuration Guide](Xcode_Configuration_Guide.md) - Detailed Xcode setup
-- [GitHub Repository](https://github.com/yourusername/Panorama) - Source code
-- [Sample Projects](https://github.com/yourusername/Panorama/tree/main/Examples) - More examples
+- [GitHub Repository](https://github.com/codelynx/Panorama) - Source code
+- [Sample Projects](https://github.com/codelynx/Panorama/tree/main/Examples) - More examples
 
 ## Getting Help
 
 If you run into issues:
 
 1. Enable debug logging with environment variables
-2. Check the [GitHub Issues](https://github.com/yourusername/Panorama/issues)
-3. Ask on [GitHub Discussions](https://github.com/yourusername/Panorama/discussions)
+2. Check the [GitHub Issues](https://github.com/codelynx/Panorama/issues)
+3. Ask on [GitHub Discussions](https://github.com/codelynx/Panorama/discussions)
 4. Review the [API Reference](API_Reference.md)
 5. Profile with Instruments for performance issues
 

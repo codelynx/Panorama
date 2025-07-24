@@ -42,7 +42,7 @@ This guide covers all the Xcode-specific configuration needed to use Panorama ef
 2. Select your app target
 3. Go to "General" tab → "Frameworks, Libraries, and Embedded Content"
 4. Click "+" → "Add Package Dependency"
-5. Enter: `https://github.com/yourusername/Panorama.git`
+5. Enter: `https://github.com/codelynx/Panorama.git`
 6. Version rules: "Up to Next Major Version" → 2.0.0
 
 ### Project Structure Recommendations

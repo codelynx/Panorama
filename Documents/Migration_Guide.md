@@ -202,7 +202,7 @@ dependencies: [
     .package(url: "https://github.com/codelynx/XPlatform", from: "1.0.0"),
     
     // Update Panorama
-    .package(url: "https://github.com/yourusername/Panorama", from: "2.0.0")
+    .package(url: "https://github.com/codelynx/Panorama", from: "2.0.0")
 ]
 ```
 
@@ -310,8 +310,8 @@ If you encounter issues during migration:
 
 1. Check the [API Reference](API_Reference.md) for detailed documentation
 2. Review the [CHANGELOG](CHANGELOG.md) for all changes
-3. Open an issue on [GitHub](https://github.com/yourusername/Panorama/issues)
-4. Join the discussion on [GitHub Discussions](https://github.com/yourusername/Panorama/discussions)
+3. Open an issue on [GitHub](https://github.com/codelynx/Panorama/issues)
+4. Join the discussion on [GitHub Discussions](https://github.com/codelynx/Panorama/discussions)
 
 ## Summary
 

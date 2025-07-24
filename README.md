@@ -32,7 +32,7 @@ Add Panorama to your project by adding the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/Panorama.git", from: "2.0.0")
+    .package(url: "https://github.com/codelynx/Panorama.git", from: "2.0.0")
 ]
 ```
 
@@ -252,6 +252,5 @@ For migration from version 1.x, see [Migration Guide](Documents/Migration_Guide.
 
 ## 💬 Support
 
-- 📧 Email: support@example.com
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/Panorama/issues)
-- 💭 Discussions: [GitHub Discussions](https://github.com/yourusername/Panorama/discussions)
+- 🐛 Issues: [GitHub Issues](https://github.com/codelynx/Panorama/issues)
+- 💭 Discussions: [GitHub Discussions](https://github.com/codelynx/Panorama/discussions)
