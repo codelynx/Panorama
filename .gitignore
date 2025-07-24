@@ -1,17 +1,105 @@
+# macOS
 .DS_Store
-*.swp
-*~.nib
-build/
-*/build/*
-*.pbxuser
-*.perspective
-*.perspectivev3
-*.mode1v3
-*.mode2v3
-xcuserdata/
-DerivedData
-*.xccheckout
-*.lock
-*.moved-aside
-.Trashes
+.AppleDouble
+.LSOverride
 ._*
+.Spotlight-V100
+.Trashes
+
+# Xcode
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+*.xcscheme
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+/*.xcodeproj
+
+# CocoaPods (if used in future)
+Pods/
+*.xcworkspace
+
+# Carthage (if used in future)
+Carthage/Build/
+Carthage/Checkouts
+
+# fastlane (if used in future)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Code Injection
+iOSInjectionProject/
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Documentation build artifacts
+docs/_build/
+docs/.build/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Logs
+*.log
+
+# OS generated files
+ehthumbs.db
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# Python (if used for scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ruby (if used for scripts)
+*.gem
+.bundle/
+vendor/bundle/
+
+# Dependencies
+node_modules/
+
+# Test coverage
+*.lcov
+coverage/
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Certificates and keys (security)
+*.p12
+*.key
+*.pem
+*.cer
+*.crt
+*.der

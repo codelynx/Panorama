@@ -111,7 +111,7 @@ open class ButtonViewlet: Viewlet {
 
 		// background
 		let backgroundFill = self.backgroundFill(for: self.state)
-		backgroundFill?.fill(rect: self.bounds, context: context)
+		backgroundFill?.fill(rect: self.bounds, in: context)
 
 		// title
 		guard let title = self.title else { return }
@@ -138,11 +138,13 @@ open class ButtonViewlet: Viewlet {
 
 	static var defaultStyle: ViewletStyle = {
 		let style = ViewletStyle()
-		let backgroundGardient = Gradient(locations: [(0, XColor.cyan), (1, XColor.blue)])!
-		let highlightedGardient = Gradient(locations: [(0, XColor.yellow), (1, XColor.red)])!
+		let backgroundGardient = Gradient(colorStops: [(0, XColor.cyan), (1, XColor.blue)])!
+		let highlightedGardient = Gradient(colorStops: [(0, XColor.yellow), (1, XColor.red)])!
 
-		style.foregroundColors = [.normal: XColor.white, .highlighted: XColor.white]
-		style.backgroundFills = [.normal: ViewletFill.none, .highlighted: ViewletFill.none]
+		style.setForegroundColor(XColor.white, for: .normal)
+		style.setForegroundColor(XColor.white, for: .highlighted)
+		style.setBackgroundFill(ViewletFill.none, for: .normal)
+		style.setBackgroundFill(ViewletFill.none, for: .highlighted)
 
 		style.font = ButtonViewlet.defaultFont
 		return style

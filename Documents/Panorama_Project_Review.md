@@ -26,7 +26,7 @@ Panorama is a cross-platform Swift framework designed for creating 2D scrollable
 
 2. **Main Classes**
    - **Panorama**: The main content container that manages the drawable scene
-   - **PanoramaView**: The host view that integrates with UIKit/AppKit
+   - **PanoramaView**: The host view that 1 with UIKit/AppKit
    - **PanoramaContentView**: Transparent interaction layer for event handling
    - **PanoramaBackView**: Rendering layer that performs Core Graphics drawing
 
@@ -98,8 +98,10 @@ The framework handles the differences between iOS and macOS coordinate systems:
 
 ## Dependencies
 
-- **ZKit** (v1.0.0): External dependency from github.com/codelynx/ZKit
-  - Provides additional utility functions and extensions
+- **XPlatform** (v1.1.0): External dependency from github.com/codelynx/XPlatform
+  - Provides modern cross-platform utilities and type aliases
+  - Better maintained alternative to the previous ZKit dependency
+  - Complements Panorama's existing cross-platform abstractions
 
 ## Sample Application
 
@@ -127,7 +129,8 @@ Panorama/
 ### Recent Changes
 Based on git status, recent modifications include:
 - Updates to core Panorama classes
-- Removal of ZKit as a submodule (now using SPM dependency)
+- Replacement of ZKit dependency with XPlatform (v1.1.0)
+- Swift 5.9+ modernization of core framework files
 - Project restructuring for Swift Package Manager
 
 ### Build System

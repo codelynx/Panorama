@@ -54,23 +54,6 @@ open class PanoramaContentView: XView {
 	}
 	#endif
 
-	#if os(macOS)
-	open override func touchesBegan(with event: NSEvent) {
-		self.panorama?.touchesBegan(with: event)
-	}
-
-	open override func touchesMoved(with event: NSEvent) {
-		self.panorama?.touchesMoved(with: event)
-	}
-
-	open override func touchesEnded(with event: NSEvent) {
-		self.panorama?.touchesEnded(with: event)
-	}
-
-	open override func touchesCancelled(with event: NSEvent) {
-		self.panorama?.touchesCancelled(with: event)
-	}
-	#endif
 
 	#if os(macOS)
 	open override func mouseDown(with event: NSEvent) {

@@ -40,7 +40,7 @@ open class PanoramaView: XView {
 	let contentView: PanoramaContentView = PanoramaContentView(frame: CGRect.zero)
 
 	#if os(iOS)
-	private (set) lazy var scrollView: UIScrollView = {
+	private(set) lazy var scrollView: UIScrollView = {
 		let scrollView = UIScrollView(frame: self.bounds)
 		scrollView.delegate = self
 		scrollView.backgroundColor = UIColor.clear
@@ -57,7 +57,7 @@ open class PanoramaView: XView {
 	#endif
 
 	#if os(macOS)
-	private (set) lazy var scrollView: NSScrollView = {
+	private(set) lazy var scrollView: NSScrollView = {
 		let scrollView = NSScrollView(frame: self.bounds)
 		scrollView.hasVerticalScroller = true
 		scrollView.hasHorizontalScroller = true

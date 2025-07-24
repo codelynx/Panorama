@@ -78,8 +78,8 @@ public extension NSView {
 
     /// Moves the specified subview to the back of the view hierarchy.
     @objc func sendSubview(toBack subview: NSView) {
-        guard var subviews = self.subviews as? [NSView],
-              let index = subviews.firstIndex(of: subview) else { return }
+        var subviews = self.subviews
+        guard let index = subviews.firstIndex(of: subview) else { return }
         
         subviews.remove(at: index)
         subviews.insert(subview, at: 0)
@@ -88,23 +88,15 @@ public extension NSView {
 	
     /// Moves the specified subview to the front of the view hierarchy.
     @objc func bringSubview(toFront subview: NSView) {
-        guard var subviews = self.subviews as? [NSView],
-              let index = subviews.firstIndex(of: subview) else { return }
+        var subviews = self.subviews
+        guard let index = subviews.firstIndex(of: subview) else { return }
         
         subviews.remove(at: index)
         subviews.append(subview)
         self.subviews = subviews
     }
 
-    /// Replaces one subview with another.
-    @objc func replaceSubview(_ subview: NSView, with other: NSView) {
-        guard var subviews = self.subviews as? [NSView],
-              let index = subviews.firstIndex(of: subview) else { return }
-        
-        subviews.remove(at: index)
-        subviews.insert(other, at: index)
-        self.subviews = subviews
-    }
+    // Note: NSView already has replaceSubview(_:with:) method in AppKit
 }
 #endif
 

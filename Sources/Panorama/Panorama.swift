@@ -69,8 +69,8 @@ open class Panorama: Viewlet {
 	
 	override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		for touch in touches {
-			if let point = touch.location(in: self), let viewlet = self.findViewlet(point: point) {
-				if viewlet.enabled {
+			if let point = touch.location(in: self), let viewlet = self.findViewlet(at: point) {
+				if viewlet.isEnabled {
 					activeTouchViewlet[touch] = viewlet
 					viewlet.touchesBegan(touches, with: event)
 				}
@@ -110,8 +110,8 @@ open class Panorama: Viewlet {
 	public var activeViewlet: Viewlet?
 
 	override open func mouseDown(with event: NSEvent) {
-		if let point = event.location(in: self), let viewlet = self.findViewlet(point: point) {
-			if viewlet !== self, viewlet.enabled {
+		if let point = event.location(in: self), let viewlet = self.findViewlet(at: point) {
+			if viewlet !== self, viewlet.isEnabled {
 				activeViewlet = viewlet
 				viewlet.mouseDown(with: event)
 			}

@@ -3,8 +3,9 @@
 [![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
 [![Platforms](https://img.shields.io/badge/Platforms-iOS%20|%20macOS-blue.svg)](https://developer.apple.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
+[![SPM Compatible](https://img.shields.io/badge/SPM-Compatible-brightgreen.svg)](https://swift.org/package-manager)
 
-`Panorama` is a Swift framework for building Core Graphics-based 2D scrollable and zoomable applications that work seamlessly on both iOS and macOS. It abstracts away the platform differences between UIView/NSView and UIScrollView/NSScrollView, providing a unified API for creating high-performance graphics applications.
+Panorama is a Swift framework for building Core Graphics-based 2D scrollable and zoomable applications that work seamlessly on both iOS and macOS. It abstracts away the platform differences between UIKit and AppKit, providing a unified API for creating high-performance graphics applications.
 
 ## ✨ Features
 
@@ -15,159 +16,19 @@
 - 🎨 **Viewlet System**: Lightweight custom drawing components
 - 📱 **Touch & Mouse Support**: Unified event handling
 - 🧩 **Extensible**: Easy to create custom viewlets
+- 🛡️ **Type Safe**: Modern Swift 5.9+ with improved type safety
 
-## Cross Platform
+## 📋 Requirements
 
-As you can see, Panorama defines some type aliases to be able to use for both iOS and macOS.  So, your `MyView` can be a subclasss of `XView`, and it is `UIView` on iOS, `NSView` on macOS.  This makes your coding life a bit easier, but you still need `#if os()` directives to write platform specific code. 
+- Swift 5.9+
+- iOS 13.0+ / macOS 10.13+
+- Xcode 15.0+
 
-```
-#if os(iOS)
-
-import UIKit
-typealias XView = UIView
-typealias XImage = UIImage
-typealias XColor = UIColor
-typealias XBezierPath = UIBezierPath
-typealias XScrollView = UIScrollView
-typealias XScrollViewDelegate = UIScrollViewDelegate
-typealias XViewController = UIViewController
-
-#elseif os(macOS)
-
-import Cocoa
-typealias XView = NSView
-typealias XImage = NSImage
-typealias XColor = NSColor
-typealias XBezierPath = NSBezierPath
-typealias XScrollView = NSScrollView
-typealias XViewController = NSViewController
-
-protocol XScrollViewDelegate {}
-
-#endif
-```
-
-For example, you may still have to use `#if os()` directive and write similar code for iOS and macOS, but still.  Still much than maintaining the separate code base.
-
-
-```
-class MyView: XView {
-	// ...
-	#if os(iOS)
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		// some layout code here
-	}
-	#endif
-	
-	#if os(macOS)
-	override func layout() {
-		super.layout()
-		// some layout code here
-	}
-	#endif
-```
-
-## Archiecture
-
-The cross platform related utility code are not the main dish here.  In `Panorama` following two classes are the main dish here.  
-
-* Panorama
-* PanoramaView
-
-### Panorama
-
-`Panorama` is a class that represent visual content, and your subclass override `draw()` method to draw content with Core Graphics.  `Panorama` is not a subclass of `UIView` nor `NSView`, but will work like a view.  So you don't have to worry about behavior differences of UI/NSView nor UI/NSScrollView differences to display a core graphics content.
-
-```
-	override func draw(in context: CGContext) {
-		// draw with core graphics
-	}
-```
-
-Here are the basic properties for the `Panorama`. 
-
-```
-	var bounds: CGRect
-	var maximumZoomScale: CGFloat
-	var minimumZoomScale: CGFloat
-```
-
-Here is the good override point to initialize the panorama, because this `Panorama` is set to be displayed.  Be aware, when this scene is removed from the view, this is also get called with `nil`.
-
-```
-	override func didMove(to panoramaView: PanoramaView?) {
-		// 
-	}
-```
-
-touch and mouse related events are propagated to Panorama, you can override appropriate methods to handle events.  You need to `#if os()` directive to implement for your desired platform.
-
-#### Touch related methods
-
-```
-	func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
-	func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
-	func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
-	func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?)
-```
-
-#### Mouse related methods
-
-```
-	func mouseDown(with event: NSEvent)
-	func mouseDragged(with event: NSEvent)
-	func mouseUp(with event: NSEvent)
-	func mouseMoved(with event: NSEvent)
-	func rightMouseDown(with event: NSEvent)
-	func rightMouseDragged(with event: NSEvent)
-	func rightMouseUp(with event: NSEvent)
-	func otherMouseDown(with event: NSEvent)
-	func otherMouseDragged(with event: NSEvent)
-	func otherMouseUp(with event: NSEvent)
-	func mouseExited(with event: NSEvent)
-	func mouseEntered(with event: NSEvent)
-```
-
-You may use `location(in: Panorama)` method for both `NSEvent` or `UITouch`, so touch location can be handled easily.
-
-If you like to use `GestureRecognizer`, stay tuned.
-
-### PanoramaView
-
-`PanoramaView` is a subclass of UIView/NSView.  It constructs necessary subcomponents like UI/NSScrollView and others by code.  So, you only needs to place `PanoramaView` directory on your storyboard, and your view controller or other part of your code need to set your subclass of Panorama to this PanoramaView.
-
-## Behind the PanoramaView
-
-In fact, there are some supporting views behind the `PanoramaView`.   `PanoramaContentView` is the one who sits within the scroll view and represent `Panorama`'s content and coordinate system, so `PanoramaContentView`'s width and height actually represents `Panorama`'s content size.   Then when you zoom or scroll your screen, `PanoramaContentView` is the one actually scrolled or zoomed.  But strange to say, both `PanoramaContentView` and `UI/NSScrollView` are transparent and cannot be seen on your screen directory.
-
-On the other hand, the view actually to be displayed is `PanoramaBackView`.  `PanoramaBackView` just sits behind `UI/NSScrollView` it does not zoomed or scrolled.  But when it came a moment to display `Panorama`, `PanoramaBackView` is the one to organize drawing process.  `PanoramaBackView` usues `PanoramaContentView`'s coordinate system to setup graphic context, and call `Panorama`'s `draw()` method.  So `Panorama` doesn't have worry about any drawing transformation, just draw things on your own coordinate systems.  
-
-When you touch or click on your screen, `PanoramaContentView` is the one to receive those events, and forwards them to `Panorama`.  Since, `PanoramaContentView`'s local coordinate represents `Panorama` coordinate, touch location and mouse location should not require complex math.  However, we provide `location(in: Panorama)` method for both `UITouch` and `NSEvent` as an extension, so you may use those methods to find location in `Panorama`.
-
-All supported views will be constructed by `PanoramaView`, and you don't have to worry about them while writing code Panorama.  But when you needs to add some features on `PanoramaView` or supporting more events, it is still good to know.
-
-<img width="640" src="https://qiita-image-store.s3.amazonaws.com/0/65634/4c1060a7-7c2d-0019-1ee4-7ad9e87dbebe.png"/>
-
-
-## Sample App
-
-This project contains living example how to use `Panorama` as a drawing app. `MyPanorama` is a subclass of `Panorama` and handles touch or mouse event to draw a picture.  It does not provide a feature to erase or save.  These features can be your practice if you are interested in learning `Panorama`.
-
-
-![Screen Shot.png](https://qiita-image-store.s3.amazonaws.com/0/65634/64d86514-fb20-0f68-5c5d-f566d094110e.png)
-
-## Requirements
-
-- **Swift 5.9+** (modernized from original Swift 3.0.2)
-- **iOS 13.0+** / **macOS 10.13+**
-- **Xcode 15.0+**
-
-## Installation
+## 📦 Installation
 
 ### Swift Package Manager
 
-Add the following to your `Package.swift` file:
+Add Panorama to your project by adding the following to your `Package.swift`:
 
 ```swift
 dependencies: [
@@ -175,5 +36,222 @@ dependencies: [
 ]
 ```
 
+Or in Xcode:
+1. File → Add Package Dependencies
+2. Enter the repository URL
+3. Select version 2.0.0 or later
 
+## 🚀 Quick Start
 
+### Basic Setup
+
+1. Create a subclass of `Panorama`:
+
+```swift
+import Panorama
+
+class MyPanorama: Panorama {
+    override func draw(in context: CGContext) {
+        // Your Core Graphics drawing code here
+        context.setFillColor(XColor.blue.cgColor)
+        context.fill(CGRect(x: 100, y: 100, width: 200, height: 200))
+    }
+    
+    override func didMove(to panoramaView: PanoramaView?) {
+        super.didMove(to: panoramaView)
+        // Setup code when panorama is attached to a view
+    }
+}
+```
+
+2. Set up the PanoramaView in your view controller:
+
+```swift
+class ViewController: XViewController {
+    @IBOutlet weak var panoramaView: PanoramaView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Create and configure your panorama
+        let myPanorama = MyPanorama(frame: CGRect(x: 0, y: 0, width: 2048, height: 2048))
+        myPanorama.minimumZoomScale = 0.5
+        myPanorama.maximumZoomScale = 4.0
+        
+        // Attach to the view
+        panoramaView.panorama = myPanorama
+    }
+}
+```
+
+### Event Handling
+
+Handle platform-specific events with unified methods:
+
+```swift
+class InteractivePanorama: Panorama {
+    #if os(iOS)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        // Handle touch
+    }
+    #endif
+    
+    #if os(macOS)
+    override func mouseDown(with event: NSEvent) {
+        let location = event.location(in: self)
+        // Handle mouse click
+    }
+    #endif
+}
+```
+
+## 🏗️ Architecture
+
+### Core Components
+
+#### Panorama
+The main content container that manages your drawable scene. It's not a UIView/NSView subclass but provides view-like functionality with platform-agnostic APIs.
+
+#### PanoramaView
+A UIView/NSView subclass that hosts the panorama content and manages scrolling/zooming behavior. It automatically creates the necessary scroll view hierarchy.
+
+#### Viewlet System
+Lightweight drawable components that can be composed hierarchically:
+
+```swift
+class CustomViewlet: Viewlet {
+    override func draw(in context: CGContext) {
+        // Custom drawing code
+    }
+    
+    override func singleAction() {
+        // Handle single tap/click
+    }
+}
+```
+
+### Architecture Diagram
+
+```
+┌─────────────────┐
+│  PanoramaView   │ (UIView/NSView)
+├─────────────────┤
+│ ┌─────────────┐ │
+│ │  BackView   │ │ ← Renders content
+│ └─────────────┘ │
+│ ┌─────────────┐ │
+│ │ ScrollView  │ │ ← Handles scrolling
+│ │ ┌─────────┐ │ │
+│ │ │Content  │ │ │ ← Captures events
+│ │ │  View   │ │ │
+│ │ └─────────┘ │ │
+│ └─────────────┘ │
+└─────────────────┘
+         ↓
+    ┌─────────┐
+    │Panorama │ ← Your content
+    └─────────┘
+```
+
+## 📖 Advanced Usage
+
+### Custom Viewlets
+
+Create reusable drawing components:
+
+```swift
+class ButtonViewlet: Viewlet {
+    var title: String = "Button"
+    var isHighlighted = false
+    
+    override func draw(in context: CGContext) {
+        // Draw background
+        let fillColor = isHighlighted ? XColor.blue : XColor.gray
+        context.setFillColor(fillColor.cgColor)
+        context.fillEllipse(in: bounds)
+        
+        // Draw text
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: XFont.systemFont(ofSize: 16),
+            .foregroundColor: XColor.white
+        ]
+        let string = NSAttributedString(string: title, attributes: attributes)
+        drawText(in: context, rect: bounds, attributedString: string, verticalAlignment: .center)
+    }
+    
+    override func singleAction() {
+        print("Button tapped: \(title)")
+    }
+}
+```
+
+### Styling System
+
+Apply consistent styling across viewlets:
+
+```swift
+let style = ViewletStyle()
+style.cornerRadius = 8.0
+style.font = XFont.boldSystemFont(ofSize: 14)
+style.setForegroundColor(.white, for: .normal)
+style.setForegroundColor(.gray, for: .highlighted)
+style.setBackgroundFill(.linearGradient(direction: .vertical, colors: [.blue, .purple]), for: .normal)
+```
+
+### Cross-Platform Type Aliases
+
+Panorama provides unified type aliases for platform-specific types:
+
+| Alias | iOS | macOS |
+|-------|-----|-------|
+| `XView` | `UIView` | `NSView` |
+| `XViewController` | `UIViewController` | `NSViewController` |
+| `XColor` | `UIColor` | `NSColor` |
+| `XImage` | `UIImage` | `NSImage` |
+| `XFont` | `UIFont` | `NSFont` |
+| `XBezierPath` | `UIBezierPath` | `NSBezierPath` |
+| `XScrollView` | `UIScrollView` | `NSScrollView` |
+
+## 🎯 Use Cases
+
+Panorama is perfect for:
+- 🎨 Drawing and sketching applications
+- 📊 Diagramming and flowchart tools
+- 🗺️ Map viewers and floor plan applications
+- 📐 Technical drawing and CAD-like applications
+- 🖼️ Image viewers with annotation support
+- 🎮 2D games and interactive visualizations
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 🙏 Acknowledgments
+
+- Original framework by Kaz Yoshikawa
+- Modernized to Swift 5.9+ with community contributions
+- Uses [XPlatform](https://github.com/codelynx/XPlatform) for additional cross-platform utilities
+
+## 📚 Documentation
+
+For detailed API documentation, see [API Reference](Documents/API_Reference.md).
+
+For migration from version 1.x, see [Migration Guide](Documents/Migration_Guide.md).
+
+## 💬 Support
+
+- 📧 Email: support@example.com
+- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/Panorama/issues)
+- 💭 Discussions: [GitHub Discussions](https://github.com/yourusername/Panorama/discussions)
