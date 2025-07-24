@@ -1,7 +1,20 @@
 # Panorama 
 
+[![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
+[![Platforms](https://img.shields.io/badge/Platforms-iOS%20|%20macOS-blue.svg)](https://developer.apple.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 
-`Panorama` is a utility set of code for Core Graphics based 2D scrollable app for both iOS and macOS.  If you like to develop an 2D zoomable scrollable content app for both iOS and macOS.  There are so many pain points because of the differences of UIView/NSView, UIScrollView/NSScrollView and other classes.  Also there are some differences in the graphics coordinate system.  This `Panorama` may be fit into your needs for developing 2D zoomable scrollable core graphics based app.
+`Panorama` is a Swift framework for building Core Graphics-based 2D scrollable and zoomable applications that work seamlessly on both iOS and macOS. It abstracts away the platform differences between UIView/NSView and UIScrollView/NSScrollView, providing a unified API for creating high-performance graphics applications.
+
+## ✨ Features
+
+- 🎯 **Cross-Platform**: Single codebase for iOS and macOS
+- 🚀 **High Performance**: Direct Core Graphics rendering
+- 🔍 **Zooming & Panning**: Built-in support for smooth interactions
+- 📐 **Coordinate System Management**: Handles platform differences automatically
+- 🎨 **Viewlet System**: Lightweight custom drawing components
+- 📱 **Touch & Mouse Support**: Unified event handling
+- 🧩 **Extensible**: Easy to create custom viewlets
 
 ## Cross Platform
 
@@ -144,11 +157,22 @@ This project contains living example how to use `Panorama` as a drawing app. `My
 
 ![Screen Shot.png](https://qiita-image-store.s3.amazonaws.com/0/65634/64d86514-fb20-0f68-5c5d-f566d094110e.png)
 
-## Xcode Version
+## Requirements
 
-```
-Xcode Version 8.2.1 (8C1002)
-Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)
+- **Swift 5.9+** (modernized from original Swift 3.0.2)
+- **iOS 13.0+** / **macOS 10.13+**
+- **Xcode 15.0+**
+
+## Installation
+
+### Swift Package Manager
+
+Add the following to your `Package.swift` file:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/yourusername/Panorama.git", from: "2.0.0")
+]
 ```
 
 

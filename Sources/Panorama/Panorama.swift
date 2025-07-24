@@ -111,7 +111,7 @@ open class Panorama: Viewlet {
 
 	override open func mouseDown(with event: NSEvent) {
 		if let point = event.location(in: self), let viewlet = self.findViewlet(point: point) {
-			if viewlet.enabled {
+			if viewlet !== self, viewlet.enabled {
 				activeViewlet = viewlet
 				viewlet.mouseDown(with: event)
 			}

@@ -154,7 +154,7 @@ open class PanoramaView: XView {
 
 	#if os(macOS)
 	open override var isFlipped: Bool {
-		return true
+		return false
 	}
 	#endif
 
@@ -186,6 +186,17 @@ open class PanoramaView: XView {
 		set { self.scrollView.delaysContentTouches = newValue }
 	}
 	#endif
+
+	public func scaleToFit() {
+		if let panorama = self.panorama {
+			let ratioH = panorama.bounds.width / self.bounds.width
+			let ratioV = panorama.bounds.height / self.bounds.height
+			let ratio = min(ratioH, ratioV)
+			#if os(macOS)
+			self.scrollView.magnification = 1.0 / ratio
+			#endif
+		}
+	}
 
 }
 

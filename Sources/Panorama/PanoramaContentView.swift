@@ -33,7 +33,7 @@ open class PanoramaContentView: XView {
 	#endif
 
 	#if os(macOS)
-	open override var isFlipped: Bool { return true }
+	open override var isFlipped: Bool { return false }
 	#endif
 
 	#if os(iOS)

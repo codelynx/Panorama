@@ -37,6 +37,10 @@ open class PanoramaBackView: XView {
 	}
 	#endif
 
+	#if os(macOS)
+	open override var isFlipped: Bool { return true }
+	#endif
+
 /*
 	var drawingTransform: CGAffineTransform {
 		guard let scene = self.scene else { return CGAffineTransform.identity }
@@ -64,18 +68,21 @@ open class PanoramaBackView: XView {
 		guard let context = NSGraphicsContext.current?.cgContext else { return }
 		#endif
 
+		#if os(iOS)
 		let targetRect = contentView.convert(self.contentView.bounds, to: self)
 		let transform0 = CGAffineTransform(translationX: 0, y: self.contentView.bounds.height).scaledBy(x: 1, y: -1)
 		let transform1 = panorama.bounds.transform(to: targetRect)
-
-		#if os(iOS)
-		let transform = transform1
-		#elseif os(macOS)
 		let transform = transform0 * transform1
+		context.concatenate(transform)
+		#endif
+
+		#if os(macOS)
+		let targetRect = contentView.convert(self.contentView.bounds, to: self)
+		let transform = panorama.bounds.transform(to: targetRect)
+		context.concatenate(transform)
 		#endif
 
 		context.saveGState()
-		context.concatenate(transform)
 		panorama.drawRecursively(in: context)
 		context.restoreGState()
 	}
