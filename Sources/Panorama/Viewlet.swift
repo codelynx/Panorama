@@ -133,14 +133,21 @@ open class Viewlet {
     public func findViewlet(at point: CGPoint) -> Viewlet? {
         let localPoint = point.applying(transform.inverted())
         
+        // First check if the point is within our bounds
+        guard bounds.contains(localPoint) else {
+            return nil
+        }
+        
         // Check subviewlets in reverse order (front to back)
         for viewlet in subviewlets.reversed() {
+            // Pass the point in our local coordinate system, not the transformed point
             if let found = viewlet.findViewlet(at: localPoint) {
                 return found
             }
         }
         
-        return bounds.contains(localPoint) ? self : nil
+        // If no subviewlet contains the point, return self
+        return self
     }
     
     // MARK: - Coordinate Conversion

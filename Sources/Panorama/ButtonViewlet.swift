@@ -16,10 +16,10 @@ import Cocoa
 
 open class ButtonViewlet: Viewlet {
 
-	var state: ViewletState = .normal { didSet { self.setNeedsDisplay() } }
+	public var state: ViewletState = .normal { didSet { self.setNeedsDisplay() } }
 
-	var title: String? { didSet { self.setNeedsDisplay() } }
-	var style: ViewletStyle? = ButtonViewlet.defaultStyle
+	public var title: String? { didSet { self.setNeedsDisplay() } }
+	public var style: ViewletStyle? = ButtonViewlet.defaultStyle
 
 	var foregroundColors: [ViewletState: XColor] = [:]
 	var backgroundFills: [ViewletState: ViewletFill] = [:]
@@ -45,7 +45,7 @@ open class ButtonViewlet: Viewlet {
 	static var selectedBackgroundFill: ViewletFill = ViewletFill.none
 
 	private var _cornerRadius: CGFloat? { didSet { self.setNeedsDisplay() } }
-	var cornerRadius: CGFloat? {
+	public var cornerRadius: CGFloat? {
 		get {
 			guard let cornerRadius = _cornerRadius else { return nil }
 			let halfwidth = self.bounds.size.width * 0.5
