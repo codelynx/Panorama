@@ -1320,6 +1320,78 @@ class OptimizedPanorama: Panorama {
 
 ---
 
+## Coordinate Systems and Text Rendering
+
+### Understanding Platform Differences
+
+Panorama handles the coordinate system differences between iOS and macOS automatically, but it's important to understand how text rendering works on each platform.
+
+#### Coordinate Systems
+
+**iOS (UIKit)**:
+- Origin: Top-left (0,0)
+- Y-axis: Increases downward
+- Core Graphics context in UIView: Flipped to match UIKit
+
+**macOS (AppKit)**:
+- Origin: Bottom-left (0,0) 
+- Y-axis: Increases upward
+- NSView can be flipped or non-flipped
+
+#### Text Rendering Approach
+
+Panorama uses different text rendering strategies for optimal results on each platform:
+
+**On iOS**:
+```swift
+// PanoramaBackView applies coordinate flip for correct rendering
+context.translateBy(x: 0, y: panorama.bounds.height)
+context.scaleBy(x: 1.0, y: -1.0)
+```
+
+**On macOS**:
+```swift
+// LabelViewlet uses NSAttributedString.draw() with flipped context
+let nsContext = NSGraphicsContext(cgContext: context, flipped: true)
+NSGraphicsContext.current = nsContext
+attributedString.draw(in: textRect)
+```
+
+#### Custom Text Drawing
+
+When implementing custom viewlets with text:
+
+**For iOS**:
+```swift
+override func draw(in context: CGContext) {
+    // iOS - Use UIGraphicsPushContext for text
+    UIGraphicsPushContext(context)
+    attributedString.draw(in: textRect)
+    UIGraphicsPopContext()
+}
+```
+
+**For macOS**:
+```swift
+override func draw(in context: CGContext) {
+    // macOS - Create flipped graphics context
+    let nsContext = NSGraphicsContext(cgContext: context, flipped: true)
+    NSGraphicsContext.saveGraphicsState()
+    NSGraphicsContext.current = nsContext
+    attributedString.draw(in: textRect)
+    NSGraphicsContext.restoreGraphicsState()
+}
+```
+
+#### Best Practices
+
+1. **Use Platform-Specific Drawing**: Let UIKit/AppKit handle text rendering when possible
+2. **Avoid Manual Flipping**: Use the provided `drawText` method or platform APIs
+3. **Test on Both Platforms**: Always verify text renders correctly on iOS and macOS
+4. **Consistent Context State**: Always save/restore graphics state when modifying transformations
+
+---
+
 ## Debugging and Troubleshooting
 
 ### Common Issues and Solutions
@@ -2095,6 +2167,110 @@ Now that you have a solid understanding of Panorama, here are some ideas to expl
 5. **Animations**: Animate viewlet properties
 6. **Custom Gestures**: Implement rotate and scale gestures
 7. **Export**: Export to PDF or image formats
+
+## New Components (v1.0.0)
+
+### TextFieldViewlet - Text Input Support
+
+**TextFieldViewlet** provides full keyboard input support with focus management:
+
+```swift
+class TextFieldViewlet: Viewlet {
+    // Properties
+    var text: String = ""
+    var placeholder: String = ""
+    var isFocused: Bool = false
+    var isEditable: Bool = true
+    var textColor: XColor = .black
+    var placeholderColor: XColor = .gray
+    var backgroundColor: XColor = .white
+    var borderColor: XColor = .lightGray
+    var cornerRadius: CGFloat = 5
+    var font: XFont = .systemFont(ofSize: 14)
+    
+    // Callbacks
+    var onTextChange: ((String) -> Void)?
+    var onReturn: (() -> Void)?
+    var onFocus: (() -> Void)?
+    var onBlur: (() -> Void)?
+    
+    // Methods
+    func focus()
+    func resignFocus()
+}
+
+// Example usage
+let textField = TextFieldViewlet(frame: CGRect(x: 50, y: 100, width: 200, height: 30))
+textField.placeholder = "Enter your name"
+textField.onTextChange = { text in
+    print("Text changed: \(text)")
+}
+panorama.addViewlet(textField)
+```
+
+### FormExampleViewlet - Form Layout Example
+
+**FormExampleViewlet** demonstrates how to build forms with labels and text fields:
+
+```swift
+class FormExampleViewlet: Viewlet {
+    private var nameField: TextFieldViewlet!
+    private var emailField: TextFieldViewlet!
+    private var descriptionField: TextFieldViewlet!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupForm()
+    }
+    
+    private func setupForm() {
+        // Create labels and fields
+        let nameLabel = LabelViewlet(frame: CGRect(x: 10, y: 10, width: 80, height: 30))
+        nameLabel.text = "Name:"
+        addViewlet(nameLabel)
+        
+        nameField = TextFieldViewlet(frame: CGRect(x: 100, y: 10, width: 200, height: 30))
+        nameField.placeholder = "Enter your name"
+        addViewlet(nameField)
+        
+        // Add more fields...
+    }
+}
+```
+
+### NoteCardViewlet - Draggable Cards
+
+**NoteCardViewlet** provides draggable card functionality with editable content:
+
+```swift
+class NoteCardViewlet: Viewlet {
+    // Properties
+    var text: String = ""
+    var isDragging: Bool = false
+    var cardColor: XColor = .yellow
+    var textColor: XColor = .black
+    var font: XFont = .systemFont(ofSize: 12)
+    
+    // Callbacks
+    var onDelete: (() -> Void)?
+    var onTextChange: ((String) -> Void)?
+    
+    // Features
+    // - Drag to move
+    // - Click delete button to remove
+    // - Double-click to edit text
+    // - Automatic shadow effect
+}
+
+// Example usage
+let noteCard = NoteCardViewlet(frame: CGRect(x: 100, y: 100, width: 200, height: 150))
+noteCard.text = "Important reminder"
+noteCard.cardColor = .yellow
+noteCard.onDelete = {
+    panorama.removeViewlet(noteCard)
+}
+panorama.addViewlet(noteCard)
+```
 
 ## Resources
 

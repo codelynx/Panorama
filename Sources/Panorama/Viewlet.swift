@@ -177,11 +177,44 @@ open class Viewlet {
         attributedString: NSAttributedString,
         verticalAlignment: VerticalAlignment
     ) {
-        // Prepare for Core Text
+        // Save the current graphics state
         context.saveGState()
         defer { context.restoreGState() }
         
-        context.translateBy(x: 0, y: bounds.height)
+        #if os(macOS)
+        // On macOS, use NSAttributedString drawing instead of Core Text
+        let nsContext = NSGraphicsContext(cgContext: context, flipped: true)
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = nsContext
+        
+        // Calculate text position based on vertical alignment
+        let framesetter = CTFramesetterCreateWithAttributedString(attributedString as CFAttributedString)
+        var fitRange = CFRange()
+        let suggestedSize = CTFramesetterSuggestFrameSizeWithConstraints(
+            framesetter,
+            CFRange(),
+            nil,
+            rect.size,
+            &fitRange
+        )
+        
+        let textRect: CGRect
+        switch verticalAlignment {
+        case .top:
+            textRect = CGRect(x: rect.minX, y: rect.minY, width: rect.width, height: suggestedSize.height)
+        case .center:
+            let topMargin = (rect.size.height - suggestedSize.height) * 0.5
+            textRect = CGRect(x: rect.minX, y: rect.minY + topMargin, width: rect.width, height: suggestedSize.height)
+        case .bottom:
+            textRect = CGRect(x: rect.minX, y: rect.maxY - suggestedSize.height, width: rect.width, height: suggestedSize.height)
+        }
+        
+        attributedString.draw(in: textRect)
+        NSGraphicsContext.restoreGraphicsState()
+        return
+        #else
+        // For iOS, use Core Text with coordinate flipping
+        context.translateBy(x: 0, y: rect.height)
         context.scaleBy(x: 1, y: -1)
         
         let framesetter = CTFramesetterCreateWithAttributedString(attributedString as CFAttributedString)
@@ -209,6 +242,7 @@ open class Viewlet {
         let path = CGPath(rect: textRect, transform: nil)
         let frame = CTFramesetterCreateFrame(framesetter, fitRange, path, nil)
         CTFrameDraw(frame, context)
+        #endif
     }
     
     // MARK: - Image Drawing

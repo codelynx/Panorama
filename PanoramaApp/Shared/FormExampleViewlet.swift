@@ -67,11 +67,11 @@ class FormExampleViewlet: Viewlet {
         notesField.placeholder = "Enter notes"
         
         // Setup callbacks
-        nameField.onTextChanged = { [weak self] text in
+        nameField.onTextChange = { [weak self] text in
             print("Name changed: \(text)")
         }
         
-        emailField.onTextChanged = { [weak self] text in
+        emailField.onTextChange = { [weak self] text in
             print("Email changed: \(text)")
         }
         
@@ -151,7 +151,11 @@ class FormExampleViewlet: Viewlet {
     override func draw(in context: CGContext) {
         // Draw background
         context.setFillColor(XColor.white.cgColor)
+        #if os(iOS)
         let backgroundPath = XBezierPath(roundedRect: bounds, cornerRadius: 8)
+        #else
+        let backgroundPath = XBezierPath(roundedRect: bounds, xRadius: 8, yRadius: 8)
+        #endif
         context.addPath(backgroundPath.cgPath)
         context.fillPath()
         

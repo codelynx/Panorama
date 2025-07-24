@@ -509,3 +509,224 @@ buttonStyle.setBackgroundFill(
     for: .highlighted
 )
 ```
+
+---
+
+## New Viewlet Components (v1.0.0)
+
+### TextFieldViewlet
+
+A text input viewlet with full keyboard support and focus management.
+
+```swift
+public class TextFieldViewlet: Viewlet
+```
+
+#### Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `text` | `String` | The current text value |
+| `placeholder` | `String` | Placeholder text shown when empty |
+| `isFocused` | `Bool` | Whether the field has keyboard focus |
+| `isEditable` | `Bool` | Whether the field accepts input |
+| `textColor` | `XColor` | Text color |
+| `placeholderColor` | `XColor` | Placeholder text color |
+| `backgroundColor` | `XColor` | Background fill color |
+| `borderColor` | `XColor` | Border stroke color |
+| `cornerRadius` | `CGFloat` | Corner radius for rounded rect |
+| `font` | `XFont` | Text font |
+| `cursorColor` | `XColor` | Cursor color |
+| `selectionColor` | `XColor` | Text selection highlight color |
+
+#### Callbacks
+
+```swift
+var onTextChange: ((String) -> Void)?      // Called when text changes
+var onReturn: (() -> Void)?                // Called when return key pressed
+var onFocus: (() -> Void)?                 // Called when field gains focus
+var onBlur: (() -> Void)?                  // Called when field loses focus
+```
+
+#### Methods
+
+```swift
+public func focus()                        // Request keyboard focus
+public func resignFocus()                  // Release keyboard focus
+```
+
+#### Platform-Specific Implementation
+
+- **iOS**: Uses UITextInputDelegate for keyboard handling
+- **macOS**: Uses NSTextInputClient for text input
+
+#### Example Usage
+
+```swift
+let textField = TextFieldViewlet(frame: CGRect(x: 50, y: 100, width: 200, height: 30))
+textField.placeholder = "Enter your name"
+textField.cornerRadius = 5
+textField.onTextChange = { newText in
+    print("Text changed: \(newText)")
+}
+textField.onReturn = {
+    textField.resignFocus()
+}
+panorama.addViewlet(textField)
+```
+
+---
+
+### NoteCardViewlet
+
+A draggable card component with editable text content.
+
+```swift
+public class NoteCardViewlet: Viewlet
+```
+
+#### Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `text` | `String` | The card's text content |
+| `isDragging` | `Bool` | Whether currently being dragged |
+| `cardColor` | `XColor` | Background color of the card |
+| `textColor` | `XColor` | Text color |
+| `font` | `XFont` | Text font |
+| `shadowRadius` | `CGFloat` | Drop shadow blur radius |
+| `shadowOffset` | `CGSize` | Drop shadow offset |
+
+#### Callbacks
+
+```swift
+var onDelete: (() -> Void)?                // Called when delete button tapped
+var onTextChange: ((String) -> Void)?      // Called when text is edited
+```
+
+#### Features
+
+- **Drag to Move**: Click and drag to reposition
+- **Delete Button**: X button in top-right corner
+- **Text Editing**: Double-click to edit text (if TextFieldViewlet available)
+- **Drop Shadow**: Automatic shadow effect for depth
+
+#### Example Usage
+
+```swift
+let noteCard = NoteCardViewlet(frame: CGRect(x: 100, y: 100, width: 200, height: 150))
+noteCard.text = "Important reminder"
+noteCard.cardColor = .yellow
+noteCard.onDelete = {
+    panorama.removeViewlet(noteCard)
+}
+panorama.addViewlet(noteCard)
+```
+
+---
+
+### FormExampleViewlet
+
+A demonstration viewlet showing how to create form layouts.
+
+```swift
+public class FormExampleViewlet: Viewlet
+```
+
+This viewlet demonstrates:
+- Organizing multiple TextFieldViewlets
+- Creating label-field pairs
+- Managing tab order between fields
+- Form validation patterns
+
+#### Example Structure
+
+```swift
+class FormExampleViewlet: Viewlet {
+    private var nameField: TextFieldViewlet!
+    private var emailField: TextFieldViewlet!
+    private var submitButton: ButtonViewlet!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupForm()
+    }
+    
+    private func setupForm() {
+        // Name field
+        let nameLabel = LabelViewlet(frame: CGRect(x: 10, y: 10, width: 80, height: 30))
+        nameLabel.text = "Name:"
+        addViewlet(nameLabel)
+        
+        nameField = TextFieldViewlet(frame: CGRect(x: 100, y: 10, width: 200, height: 30))
+        nameField.placeholder = "Enter your name"
+        addViewlet(nameField)
+        
+        // Continue with other fields...
+    }
+}
+```
+
+---
+
+## Bug Fixes (v1.0.0)
+
+### 1. findViewlet Infinite Recursion Fix
+
+**Issue**: The `findViewlet(at:)` method could cause stack overflow with circular viewlet references.
+
+**Resolution**: Added bounds checking before recursion:
+```swift
+guard bounds.contains(localPoint) else {
+    return nil
+}
+```
+
+### 2. Touch Handling Recursion Fix
+
+**Issue**: Nested Panorama instances caused infinite recursion in touch event handling.
+
+**Resolution**: Added type checking to prevent forwarding touches to Panorama instances:
+```swift
+if viewlet !== self && !(viewlet is Panorama) && viewlet.isEnabled {
+    activeTouchViewlet[touch] = viewlet
+    viewlet.touchesBegan(touches, with: event)
+}
+```
+
+### 3. Touch Location Stack Overflow Fix
+
+**Issue**: The `location(in:)` methods could recurse infinitely between UITouch and Panorama.
+
+**Resolution**: Get location directly from content view:
+```swift
+func location(in panorama: Panorama) -> CGPoint? {
+    if let panoramaView = panorama.panoramaView {
+        let locationInContentView = self.location(in: panoramaView.contentView)
+        return locationInContentView
+    }
+    return nil
+}
+```
+
+### 4. iOS Upside-Down Rendering Fix
+
+**Issue**: Content rendered upside down on iOS due to coordinate system differences.
+
+**Resolution**: Added proper coordinate flip transformation in PanoramaBackView's draw method for iOS:
+```swift
+#if os(iOS)
+context.translateBy(x: 0, y: panorama.bounds.height)
+context.scaleBy(x: 1.0, y: -1.0)
+#endif
+```
+
+### 5. Text Rendering Consistency Fix
+
+**Issue**: LabelViewlet text rendered upside down on macOS while other text was correct.
+
+**Resolution**: Updated the `drawText` method in Viewlet to use platform-appropriate text rendering:
+- **iOS**: Uses Core Text with coordinate flipping
+- **macOS**: Uses NSAttributedString.draw() with a flipped NSGraphicsContext
+
+This ensures consistent text rendering across all viewlet types on both platforms.

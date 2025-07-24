@@ -73,8 +73,9 @@ open class PanoramaBackView: XView {
 		// First apply the transform to position and scale the content
 		let transform1 = panorama.bounds.transform(to: targetRect)
 		context.concatenate(transform1)
-		// Note: We don't need to flip coordinates on iOS since UIKit and Core Graphics
-		// both use top-left origin when drawing in a UIView context
+		// Flip the coordinate system for iOS
+		context.translateBy(x: 0, y: panorama.bounds.height)
+		context.scaleBy(x: 1.0, y: -1.0)
 		#endif
 
 		#if os(macOS)

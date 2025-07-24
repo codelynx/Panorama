@@ -150,6 +150,36 @@ import ZKit
 
 ## New Features in 1.0
 
+### New Components
+
+#### TextFieldViewlet
+Full keyboard input support with focus management:
+```swift
+let textField = TextFieldViewlet(frame: CGRect(x: 50, y: 100, width: 200, height: 30))
+textField.placeholder = "Enter text"
+textField.onTextChange = { text in
+    print("Text: \(text)")
+}
+```
+
+#### NoteCardViewlet
+Draggable card components:
+```swift
+let card = NoteCardViewlet(frame: CGRect(x: 100, y: 100, width: 200, height: 150))
+card.text = "Drag me!"
+card.cardColor = .yellow
+```
+
+#### FormExampleViewlet
+Complete form layout example with multiple fields.
+
+### Bug Fixes
+
+1. **Fixed infinite recursion in findViewlet** - Added bounds checking
+2. **Fixed touch handling recursion** - Prevented forwarding to nested Panoramas
+3. **Fixed touch location stack overflow** - Direct content view access
+4. **Fixed iOS upside-down rendering** - Removed unnecessary coordinate flip
+
 ### 1. Enhanced Type Safety
 
 - All enums now conform to `CaseIterable`

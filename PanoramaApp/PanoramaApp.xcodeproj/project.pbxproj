@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CC0721D52B6ADE5E007D03CA /* Panorama in Frameworks */ = {isa = PBXBuildFile; productRef = CC0721D42B6ADE5E007D03CA /* Panorama */; };
+		CC0B05722E321BC1005D13C9 /* NoteCardViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B056F2E321BC1005D13C9 /* NoteCardViewlet.swift */; };
+		CC0B05732E321BC1005D13C9 /* TextFieldViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B05702E321BC1005D13C9 /* TextFieldViewlet.swift */; };
+		CC0B05742E321BC1005D13C9 /* FormExampleViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B056D2E321BC1005D13C9 /* FormExampleViewlet.swift */; };
+		CC0B05762E321BC1005D13C9 /* NoteCardViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B056F2E321BC1005D13C9 /* NoteCardViewlet.swift */; };
+		CC0B05772E321BC1005D13C9 /* TextFieldViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B05702E321BC1005D13C9 /* TextFieldViewlet.swift */; };
+		CC0B05782E321BC1005D13C9 /* FormExampleViewlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B056D2E321BC1005D13C9 /* FormExampleViewlet.swift */; };
 		CC2F4CD02B6AD98B00F37EB4 /* MyPanorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F4CCE2B6AD98B00F37EB4 /* MyPanorama.swift */; };
 		CC2F4CD12B6AD98B00F37EB4 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F4CCF2B6AD98B00F37EB4 /* MyViewController.swift */; };
 		CC2F4CD72B6AD9CD00F37EB4 /* Panorama in Frameworks */ = {isa = PBXBuildFile; productRef = CC2F4CD62B6AD9CD00F37EB4 /* Panorama */; };
@@ -27,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC0B056D2E321BC1005D13C9 /* FormExampleViewlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormExampleViewlet.swift; sourceTree = "<group>"; };
+		CC0B056F2E321BC1005D13C9 /* NoteCardViewlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardViewlet.swift; sourceTree = "<group>"; };
+		CC0B05702E321BC1005D13C9 /* TextFieldViewlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewlet.swift; sourceTree = "<group>"; };
 		CC2F4CCE2B6AD98B00F37EB4 /* MyPanorama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPanorama.swift; sourceTree = "<group>"; };
 		CC2F4CCF2B6AD98B00F37EB4 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		CC7DDB8C2B6AE313000A4308 /* PanoramaApp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PanoramaApp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +78,9 @@
 		CC2F4CCD2B6AD98B00F37EB4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CC0B056D2E321BC1005D13C9 /* FormExampleViewlet.swift */,
+				CC0B056F2E321BC1005D13C9 /* NoteCardViewlet.swift */,
+				CC0B05702E321BC1005D13C9 /* TextFieldViewlet.swift */,
 				CC2F4CCE2B6AD98B00F37EB4 /* MyPanorama.swift */,
 				CC2F4CCF2B6AD98B00F37EB4 /* MyViewController.swift */,
 			);
@@ -241,6 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7DDBA02B6AE347000A4308 /* MyPanorama.swift in Sources */,
+				CC0B05762E321BC1005D13C9 /* NoteCardViewlet.swift in Sources */,
+				CC0B05772E321BC1005D13C9 /* TextFieldViewlet.swift in Sources */,
+				CC0B05782E321BC1005D13C9 /* FormExampleViewlet.swift in Sources */,
 				CC7DDB8F2B6AE313000A4308 /* AppDelegate.swift in Sources */,
 				CC7DDBA12B6AE347000A4308 /* MyViewController.swift in Sources */,
 				CC7DDB912B6AE313000A4308 /* SceneDelegate.swift in Sources */,
@@ -253,6 +268,9 @@
 			files = (
 				CC2F4CD02B6AD98B00F37EB4 /* MyPanorama.swift in Sources */,
 				CC2F4CD12B6AD98B00F37EB4 /* MyViewController.swift in Sources */,
+				CC0B05722E321BC1005D13C9 /* NoteCardViewlet.swift in Sources */,
+				CC0B05732E321BC1005D13C9 /* TextFieldViewlet.swift in Sources */,
+				CC0B05742E321BC1005D13C9 /* FormExampleViewlet.swift in Sources */,
 				CCB7203C2B6AD93C008B0F0D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

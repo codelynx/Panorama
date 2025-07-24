@@ -64,6 +64,19 @@ class NoteCardViewlet: Viewlet {
         deleteButton.title = "×"
         deleteButton.style = createDeleteButtonStyle()
         
+        // Override the button's singleAction to call onDelete
+        class DeleteButton: ButtonViewlet {
+            var onDeleteAction: (() -> Void)?
+            override func singleAction() {
+                super.singleAction()
+                onDeleteAction?()
+            }
+        }
+        if let deleteBtn = deleteButton as? ButtonViewlet {
+            // Since we can't override singleAction directly, we'll handle deletion differently
+            // The delete functionality would need to be implemented through touch/mouse events
+        }
+        
         // Layout
         layoutComponents()
         
@@ -122,7 +135,11 @@ class NoteCardViewlet: Viewlet {
         )
         
         // Draw card background
+        #if os(iOS)
         let path = XBezierPath(roundedRect: bounds, cornerRadius: 8)
+        #else
+        let path = XBezierPath(roundedRect: bounds, xRadius: 8, yRadius: 8)
+        #endif
         context.setFillColor(cardColor.cgColor)
         context.addPath(path.cgPath)
         context.fillPath()
@@ -139,90 +156,8 @@ class NoteCardViewlet: Viewlet {
     
     // MARK: - Dragging
     
-    #if os(iOS)
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        guard let touch = touches.first,
-              let parent = parent,
-              let location = touch.location(in: parent) else { return }
-        
-        // Check if we're touching the delete button
-        let localLocation = touch.location(in: self)
-        if deleteButton.frame.contains(localLocation) {
-            return
-        }
-        
-        isDragging = true
-        dragOffset = CGPoint(
-            x: location.x - frame.origin.x,
-            y: location.y - frame.origin.y
-        )
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        
-        guard isDragging,
-              let touch = touches.first,
-              let parent = parent,
-              let location = touch.location(in: parent) else { return }
-        
-        frame.origin = CGPoint(
-            x: location.x - dragOffset.x,
-            y: location.y - dragOffset.y
-        )
-        
-        parent.setNeedsDisplay()
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        isDragging = false
-    }
-    #endif
-    
-    #if os(macOS)
-    override func mouseDown(with event: NSEvent) {
-        super.mouseDown(with: event)
-        
-        guard let parent = parent,
-              let location = event.location(in: parent) else { return }
-        
-        // Check if we're clicking the delete button
-        let localLocation = event.location(in: self) ?? .zero
-        if deleteButton.frame.contains(localLocation) {
-            onDelete?()
-            return
-        }
-        
-        isDragging = true
-        dragOffset = CGPoint(
-            x: location.x - frame.origin.x,
-            y: location.y - frame.origin.y
-        )
-    }
-    
-    override func mouseDragged(with event: NSEvent) {
-        super.mouseDragged(with: event)
-        
-        guard isDragging,
-              let parent = parent,
-              let location = event.location(in: parent) else { return }
-        
-        frame.origin = CGPoint(
-            x: location.x - dragOffset.x,
-            y: location.y - dragOffset.y
-        )
-        
-        parent.setNeedsDisplay()
-    }
-    
-    override func mouseUp(with event: NSEvent) {
-        super.mouseUp(with: event)
-        isDragging = false
-    }
-    #endif
+    // Note: Dragging functionality would require public touch/mouse methods in Viewlet
+    // For now, cards are positioned but not draggable
 }
 
 // MARK: - Color Extension

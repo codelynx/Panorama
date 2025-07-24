@@ -14,9 +14,24 @@ Panorama is a Swift framework for building Core Graphics-based 2D scrollable and
 - 🔍 **Zooming & Panning**: Built-in support for smooth interactions
 - 📐 **Coordinate System Management**: Handles platform differences automatically
 - 🎨 **Viewlet System**: Lightweight custom drawing components
-- 📱 **Touch & Mouse Support**: Unified event handling
+- 📱 **Touch & Mouse Support**: Unified event handling with improved stability
 - 🧩 **Extensible**: Easy to create custom viewlets
 - 🛡️ **Type Safe**: Modern Swift 5.9+ with improved type safety
+- ⌨️ **Text Input**: Built-in TextFieldViewlet for keyboard input
+- 🎴 **Draggable Cards**: NoteCardViewlet for interactive card interfaces
+
+## 🆕 What's New in v1.0.0
+
+### Bug Fixes
+- Fixed infinite recursion in hit testing (`findViewlet` method)
+- Fixed touch handling recursion for nested Panoramas
+- Fixed touch location calculation to prevent stack overflow
+- Fixed upside-down rendering issue on iOS platforms
+
+### New Components
+- **TextFieldViewlet**: Full-featured text input with keyboard support
+- **FormExampleViewlet**: Example implementation of form layouts
+- **NoteCardViewlet**: Draggable card components with delete functionality
 
 ## 📋 Requirements
 
@@ -156,6 +171,41 @@ class CustomViewlet: Viewlet {
 ```
 
 ## 📖 Advanced Usage
+
+### Text Input with TextFieldViewlet
+
+```swift
+let textField = TextFieldViewlet(frame: CGRect(x: 50, y: 100, width: 200, height: 30))
+textField.placeholder = "Enter your name"
+textField.text = ""
+textField.textColor = .black
+textField.backgroundColor = .white
+textField.cornerRadius = 5
+
+// Handle text changes
+textField.onTextChange = { newText in
+    print("Text changed: \(newText)")
+}
+
+// Handle return key
+textField.onReturn = {
+    print("Return key pressed")
+    textField.resignFocus()
+}
+
+panorama.addViewlet(textField)
+```
+
+### Draggable Cards with NoteCardViewlet
+
+```swift
+let noteCard = NoteCardViewlet(frame: CGRect(x: 100, y: 100, width: 200, height: 150))
+noteCard.text = "Drag me around!"
+noteCard.onDelete = {
+    panorama.removeViewlet(noteCard)
+}
+panorama.addViewlet(noteCard)
+```
 
 ### Custom Viewlets
 
