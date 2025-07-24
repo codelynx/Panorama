@@ -184,7 +184,7 @@ You don't need to worry about these differences - just draw in your panorama's c
    ```
    https://github.com/codelynx/Panorama.git
    ```
-3. Choose version 2.0.0 or later
+3. Choose version 1.0.0 or later
 4. Add to your app target
 
 #### Manual Installation
@@ -193,7 +193,7 @@ Alternatively, add to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/codelynx/Panorama.git", from: "2.0.0")
+    .package(url: "https://github.com/codelynx/Panorama.git", from: "1.0.0")
 ],
 targets: [
     .target(

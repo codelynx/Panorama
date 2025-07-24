@@ -1,10 +1,10 @@
-# Migration Guide - Panorama 1.x to 2.0
+# Migration Guide - Panorama Legacy to 1.0
 
-This guide helps you migrate your existing Panorama 1.x code to version 2.0, which includes Swift 5.9+ modernization and API improvements.
+This guide helps you migrate your existing legacy Panorama code to version 1.0, which includes Swift 5.9+ modernization and API improvements.
 
 ## Overview of Changes
 
-Panorama 2.0 brings significant improvements while maintaining the core architecture:
+Panorama 1.0 brings significant improvements while maintaining the core architecture:
 
 - **Swift 5.9+ requirement** (previously Swift 3.0.2)
 - **Modernized APIs** with better type safety
@@ -20,7 +20,7 @@ Panorama 2.0 brings significant improvements while maintaining the core architec
 - Swift 3.0.2+
 - Xcode 8.2+
 
-**After (2.0):**
+**After (1.0):**
 - Swift 5.9+
 - Xcode 15.0+
 - iOS 13.0+ / macOS 10.13+
@@ -148,7 +148,7 @@ import ZKit
 // Remove ZKit import - functionality is built-in or use XPlatform if needed
 ```
 
-## New Features in 2.0
+## New Features in 1.0
 
 ### 1. Enhanced Type Safety
 
@@ -202,7 +202,7 @@ dependencies: [
     .package(url: "https://github.com/codelynx/XPlatform", from: "1.0.0"),
     
     // Update Panorama
-    .package(url: "https://github.com/codelynx/Panorama", from: "2.0.0")
+    .package(url: "https://github.com/codelynx/Panorama", from: "1.0.0")
 ]
 ```
 
@@ -275,7 +275,7 @@ Remove any `import ZKit` statements from your code. The functionality you need i
 
 **Solution:** Gradient is now a struct. Check if you're trying to use reference semantics and adjust accordingly
 
-## Best Practices for 2.0
+## Best Practices for 1.0
 
 1. **Use Modern Swift Patterns:**
    ```swift
@@ -315,6 +315,6 @@ If you encounter issues during migration:
 
 ## Summary
 
-While Panorama 2.0 includes several breaking changes, the migration process is straightforward. The improvements in type safety, performance, and modern Swift support make the upgrade worthwhile. Most projects can be migrated in a few hours by following this guide.
+While Panorama 1.0 includes several breaking changes, the migration process is straightforward. The improvements in type safety, performance, and modern Swift support make the upgrade worthwhile. Most projects can be migrated in a few hours by following this guide.
 
 The core architecture remains the same, so your existing knowledge of Panorama still applies. The changes primarily improve the developer experience and code maintainability.

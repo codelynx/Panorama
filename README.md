@@ -32,14 +32,14 @@ Add Panorama to your project by adding the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/codelynx/Panorama.git", from: "2.0.0")
+    .package(url: "https://github.com/codelynx/Panorama.git", from: "1.0.0")
 ]
 ```
 
 Or in Xcode:
 1. File → Add Package Dependencies
 2. Enter the repository URL
-3. Select version 2.0.0 or later
+3. Select version 1.0.0 or later
 
 ## 🚀 Quick Start
 
