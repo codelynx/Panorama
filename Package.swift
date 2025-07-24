@@ -12,7 +12,7 @@ let package = Package(
             targets: ["Panorama"]),
     ],
     dependencies: [
-    	.package(url: "http://github.com/codelynx/ZKit", from: "1.0.0")
+        .package(url: "https://github.com/codelynx/XPlatform", from: "1.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

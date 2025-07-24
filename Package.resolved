@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "zkit",
+      "identity" : "xplatform",
       "kind" : "remoteSourceControl",
-      "location" : "http://github.com/codelynx/ZKit",
+      "location" : "https://github.com/codelynx/XPlatform",
       "state" : {
-        "revision" : "d500b11eabf93a9a109a65ce2fd3540cb9a981db",
-        "version" : "1.0.0"
+        "revision" : "5b583d2a929fedb7600a9125a3c80cd4419af73a",
+        "version" : "1.1.0"
       }
     }
   ],
