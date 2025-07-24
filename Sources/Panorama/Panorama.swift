@@ -69,7 +69,12 @@ open class Panorama: Viewlet {
 	
 	override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		for touch in touches {
-			if let point = touch.location(in: self), let viewlet = self.findViewlet(at: point) {
+			// Get the location directly in the content view to avoid recursion
+			guard let panoramaView = self.panoramaView else { continue }
+			
+			let point = touch.location(in: panoramaView.contentView)
+			
+			if let viewlet = self.findViewlet(at: point) {
 				if viewlet.isEnabled {
 					activeTouchViewlet[touch] = viewlet
 					viewlet.touchesBegan(touches, with: event)
