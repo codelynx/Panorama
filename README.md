@@ -253,4 +253,3 @@ For migration from version 1.x, see [Migration Guide](Documents/Migration_Guide.
 ## 💬 Support
 
 - 🐛 Issues: [GitHub Issues](https://github.com/codelynx/Panorama/issues)
-- 💭 Discussions: [GitHub Discussions](https://github.com/codelynx/Panorama/discussions)

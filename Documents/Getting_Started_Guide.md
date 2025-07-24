@@ -2110,8 +2110,7 @@ If you run into issues:
 
 1. Enable debug logging with environment variables
 2. Check the [GitHub Issues](https://github.com/codelynx/Panorama/issues)
-3. Ask on [GitHub Discussions](https://github.com/codelynx/Panorama/discussions)
-4. Review the [API Reference](API_Reference.md)
-5. Profile with Instruments for performance issues
+3. Review the [API Reference](API_Reference.md)
+4. Profile with Instruments for performance issues
 
 Happy coding with Panorama!
