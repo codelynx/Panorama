@@ -723,10 +723,10 @@ context.scaleBy(x: 1.0, y: -1.0)
 
 ### 5. Text Rendering Consistency Fix
 
-**Issue**: LabelViewlet text rendered upside down on macOS while other text was correct.
+**Issue**: LabelViewlet text rendered upside down on macOS while other text was correct. Additionally, on iOS, some labels were rendering upside down due to coordinate system issues.
 
 **Resolution**: Updated the `drawText` method in Viewlet to use platform-appropriate text rendering:
-- **iOS**: Uses Core Text with coordinate flipping
+- **iOS**: Uses UIKit's native string drawing with `UIGraphicsPushContext/PopContext`, eliminating the need for manual coordinate flipping
 - **macOS**: Uses NSAttributedString.draw() with a flipped NSGraphicsContext
 
-This ensures consistent text rendering across all viewlet types on both platforms.
+This ensures consistent text rendering across all viewlet types on both platforms without coordinate system conflicts.

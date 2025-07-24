@@ -1344,18 +1344,21 @@ Panorama uses different text rendering strategies for optimal results on each pl
 
 **On iOS**:
 ```swift
-// PanoramaBackView applies coordinate flip for correct rendering
-context.translateBy(x: 0, y: panorama.bounds.height)
-context.scaleBy(x: 1.0, y: -1.0)
+// Uses UIKit's native string drawing
+UIGraphicsPushContext(context)
+attributedString.draw(in: textRect)
+UIGraphicsPopContext()
 ```
 
 **On macOS**:
 ```swift
-// LabelViewlet uses NSAttributedString.draw() with flipped context
+// Uses NSAttributedString.draw() with flipped context
 let nsContext = NSGraphicsContext(cgContext: context, flipped: true)
 NSGraphicsContext.current = nsContext
 attributedString.draw(in: textRect)
 ```
+
+The framework automatically handles coordinate system differences internally, so you don't need to manually flip coordinates when drawing text.
 
 #### Custom Text Drawing
 

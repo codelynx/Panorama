@@ -44,11 +44,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Modified `location(in:)` to get coordinates directly from content view
   - Avoids circular calls between UITouch and Panorama
 - **Critical**: Fixed upside-down rendering on iOS platforms
-  - Added proper coordinate flip transformation in PanoramaBackView for iOS
-  - Correctly handles the difference between UIKit and Core Graphics coordinate systems
+  - Removed unnecessary coordinate flipping in PanoramaBackView for iOS
+  - iOS UIView already provides a flipped context, no additional flipping needed
 - **Critical**: Fixed inconsistent text rendering on macOS
   - Updated Viewlet's drawText method to use NSAttributedString.draw() on macOS
   - Ensures all text renders correctly without manual coordinate flipping
+- **Improved**: iOS text rendering now uses UIKit's native string drawing
+  - Changed from Core Text with manual coordinate flipping to UIGraphicsPushContext/PopContext
+  - Fixes issues where some labels appeared upside down after TextFieldViewlet rendering
+  - Provides more consistent text rendering across all viewlet types
 
 ### Removed
 - ZKit dependency (functionality integrated or replaced)

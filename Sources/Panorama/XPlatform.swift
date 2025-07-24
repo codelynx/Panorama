@@ -46,18 +46,18 @@ public protocol XScrollViewDelegate {}
 #if os(macOS)
 public extension NSBezierPath {
 
-    func addLine(to point: CGPoint) {
-        self.line(to: point)
-    }
+	func addLine(to point: CGPoint) {
+		self.line(to: point)
+	}
 
 }
 #endif
 
 #if os(iOS)
 public extension UIBezierPath {
-    func line(to point: CGPoint) {
-        self.addLine(to: point)
-    }
+	func line(to point: CGPoint) {
+		self.addLine(to: point)
+	}
 }
 #endif
 
@@ -66,37 +66,37 @@ public extension UIBezierPath {
 
 #if os(macOS)
 public extension NSView {
-    /// Marks the receiver's layout as needing an update.
-    @objc func setNeedsLayout() {
-        self.needsLayout = true
-    }
-    
-    /// Marks the receiver's entire bounds as needing display.
-    @objc func setNeedsDisplay() {
-        self.setNeedsDisplay(self.bounds)
-    }
-
-    /// Moves the specified subview to the back of the view hierarchy.
-    @objc func sendSubview(toBack subview: NSView) {
-        var subviews = self.subviews
-        guard let index = subviews.firstIndex(of: subview) else { return }
-        
-        subviews.remove(at: index)
-        subviews.insert(subview, at: 0)
-        self.subviews = subviews
-    }
+	/// Marks the receiver's layout as needing an update.
+	@objc func setNeedsLayout() {
+		self.needsLayout = true
+	}
 	
-    /// Moves the specified subview to the front of the view hierarchy.
-    @objc func bringSubview(toFront subview: NSView) {
-        var subviews = self.subviews
-        guard let index = subviews.firstIndex(of: subview) else { return }
-        
-        subviews.remove(at: index)
-        subviews.append(subview)
-        self.subviews = subviews
-    }
+	/// Marks the receiver's entire bounds as needing display.
+	@objc func setNeedsDisplay() {
+		self.setNeedsDisplay(self.bounds)
+	}
 
-    // Note: NSView already has replaceSubview(_:with:) method in AppKit
+	/// Moves the specified subview to the back of the view hierarchy.
+	@objc func sendSubview(toBack subview: NSView) {
+		var subviews = self.subviews
+		guard let index = subviews.firstIndex(of: subview) else { return }
+		
+		subviews.remove(at: index)
+		subviews.insert(subview, at: 0)
+		self.subviews = subviews
+	}
+	
+	/// Moves the specified subview to the front of the view hierarchy.
+	@objc func bringSubview(toFront subview: NSView) {
+		var subviews = self.subviews
+		guard let index = subviews.firstIndex(of: subview) else { return }
+		
+		subviews.remove(at: index)
+		subviews.append(subview)
+		self.subviews = subviews
+	}
+
+	// Note: NSView already has replaceSubview(_:with:) method in AppKit
 }
 #endif
 
@@ -105,16 +105,16 @@ public extension NSView {
 
 #if os(macOS)
 public extension NSImage {
-    /// Returns a Core Graphics image representation of the image.
-    var cgImage: CGImage? {
-        guard let data = self.tiffRepresentation,
-              let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
-              CGImageSourceGetCount(imageSource) > 0 else {
-            return nil
-        }
-        
-        return CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
-    }
+	/// Returns a Core Graphics image representation of the image.
+	var cgImage: CGImage? {
+		guard let data = self.tiffRepresentation,
+		      let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
+		      CGImageSourceGetCount(imageSource) > 0 else {
+		    return nil
+		}
+		
+		return CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
+	}
 }
 #endif
 

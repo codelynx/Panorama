@@ -179,6 +179,7 @@ Complete form layout example with multiple fields.
 2. **Fixed touch handling recursion** - Prevented forwarding to nested Panoramas
 3. **Fixed touch location stack overflow** - Direct content view access
 4. **Fixed iOS upside-down rendering** - Removed unnecessary coordinate flip
+5. **Improved iOS text rendering** - Now uses UIKit's native string drawing for consistent results
 
 ### 1. Enhanced Type Safety
 

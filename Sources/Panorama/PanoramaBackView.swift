@@ -68,21 +68,9 @@ open class PanoramaBackView: XView {
 		guard let context = NSGraphicsContext.current?.cgContext else { return }
 		#endif
 
-		#if os(iOS)
-		let targetRect = contentView.convert(self.contentView.bounds, to: self)
-		// First apply the transform to position and scale the content
-		let transform1 = panorama.bounds.transform(to: targetRect)
-		context.concatenate(transform1)
-		// Flip the coordinate system for iOS
-		context.translateBy(x: 0, y: panorama.bounds.height)
-		context.scaleBy(x: 1.0, y: -1.0)
-		#endif
-
-		#if os(macOS)
 		let targetRect = contentView.convert(self.contentView.bounds, to: self)
 		let transform = panorama.bounds.transform(to: targetRect)
 		context.concatenate(transform)
-		#endif
 
 		context.saveGState()
 		panorama.drawRecursively(in: context)
