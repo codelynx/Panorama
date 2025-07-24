@@ -68,24 +68,37 @@ open class Panorama: Viewlet {
 	private var activeTouchViewlet = [UITouch: Viewlet]()
 	
 	override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		// Only process touches if we're the root panorama (attached to a PanoramaView)
+		guard self.panoramaView != nil else {
+			// If we're a nested panorama, just call super to handle as a regular viewlet
+			super.touchesBegan(touches, with: event)
+			return
+		}
+		
 		for touch in touches {
-			// Get the location directly in the content view to avoid recursion
-			guard let panoramaView = self.panoramaView else { continue }
-			
-			let point = touch.location(in: panoramaView.contentView)
+			let point = touch.location(in: self.panoramaView!.contentView)
 			
 			if let viewlet = self.findViewlet(at: point) {
-				if viewlet.isEnabled {
+				// Don't forward to self or other Panoramas to avoid infinite recursion
+				if viewlet !== self && !(viewlet is Panorama) && viewlet.isEnabled {
 					activeTouchViewlet[touch] = viewlet
 					viewlet.touchesBegan(touches, with: event)
+				} else if viewlet !== self && viewlet.isEnabled {
+					// For nested Panoramas, just track them but don't forward touches
+					activeTouchViewlet[touch] = viewlet
 				}
 			}
 		}
 	}
 
 	override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+		guard self.panoramaView != nil else {
+			super.touchesMoved(touches, with: event)
+			return
+		}
+		
 		for touch in touches {
-			if let viewlet = self.activeTouchViewlet[touch] {
+			if let viewlet = self.activeTouchViewlet[touch], !(viewlet is Panorama) {
 				// why not checking enabled? -- once start handling began then let them finish
 				viewlet.touchesMoved(touches, with: event)
 			}
@@ -93,8 +106,13 @@ open class Panorama: Viewlet {
 	}
 	
 	override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+		guard self.panoramaView != nil else {
+			super.touchesEnded(touches, with: event)
+			return
+		}
+		
 		for touch in touches {
-			if let viewlet = self.activeTouchViewlet[touch] {
+			if let viewlet = self.activeTouchViewlet[touch], !(viewlet is Panorama) {
 				viewlet.touchesEnded(touches, with: event)
 			}
 			self.activeTouchViewlet[touch] = nil
@@ -102,8 +120,13 @@ open class Panorama: Viewlet {
 	}
 	
 	override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+		guard self.panoramaView != nil else {
+			super.touchesCancelled(touches, with: event)
+			return
+		}
+		
 		for touch in touches {
-			if let viewlet = self.activeTouchViewlet[touch] {
+			if let viewlet = self.activeTouchViewlet[touch], !(viewlet is Panorama) {
 				viewlet.touchesCancelled(touches, with: event)
 			}
 			self.activeTouchViewlet[touch] = nil
